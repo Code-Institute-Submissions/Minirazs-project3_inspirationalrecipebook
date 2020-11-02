@@ -13,6 +13,7 @@ app = Flask(__name__)
 def home():
     return "It's working!"
 
+
 # "magic code" -- boilerplate
 #if __name__ == '__main__':
     # app.run(host=os.environ.get('IP'),     #must give a host (IP address)
