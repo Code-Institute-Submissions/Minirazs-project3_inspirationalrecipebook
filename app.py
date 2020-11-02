@@ -4,7 +4,11 @@ import os
 
 app = Flask(__name__)
 
-wsgi_app = app.wsgi_app
+
+@app.route('/')
+@app.route('/home')
+def home():
+    return "It's working!"
 
 # "magic code" -- boilerplate
 #if __name__ == '__main__':
@@ -12,13 +16,7 @@ wsgi_app = app.wsgi_app
     #         port=int(os.environ.get('PORT')),   #networking clients access
     #         debug=True)
 if __name__ == '__main__': 
-  
-    # run() method of Flask class runs the application  
-    # on the local development server. 
-    app.run()
+    app.run(host="localhost",     #must give a host (IP address)
+            port=8080,   #networking clients access
+            debug=True)
 
-
-@app.route('/')
-@app.route('/home')
-def home():
-    return "It's working!"
