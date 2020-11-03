@@ -1,17 +1,25 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import os
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+# from werkzeug.security import generate_password_hash, check_password_hash
+if os.path.exists("env.py"):
+    import env
 
 
 app = Flask(__name__)
 
 
-
-
-
 @app.route('/')
-@app.route('/home')
 def home():
     return "It's working!"
+
+
+@app.route('/recipes')
+def show_recipes():
+    all_recipes = db.recipes.find()
+    return render_template('all_recipes.template.html', all_recipes=all_recipes)
+
 
 
 # "magic code" -- boilerplate
