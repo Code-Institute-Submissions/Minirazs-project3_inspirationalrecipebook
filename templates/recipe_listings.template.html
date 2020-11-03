@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Recipe Name</th>
+            <th>Description</th>
+            <th>Number of Servings</th>
+            <th>Directions</th>
+            <th>Cuisine Type</th>
+            <th>Meal Type</th>
+            <th>Media</th>
+        </tr>
+        {%for each_recipe in all_recipes %}
+            <tr>
+                <td>{{each_recipe.name}}</td> 
+                <td>{{each_recipe.description}}</td>
+                <td>{{each_recipe.servings}}</td>
+                <td>{{each_recipe.directions}}</td>
+                <td>{{each_recipe.cuisine}}</td>
+                <td>{{each_recipe.meal_type}}</td>
+                <td>{{each_recipe.media}}</td>
+                <td>
+                    <a href="{{ url_for('show_edit_recipe', recipe_id=each_recipe._id ) }}" class="btn btn-success">Edit</a>
+                    <a href="{{ url_for('show_confirm_delete', recipe_id=each_recipe._id)}}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {%endfor%}
+    </thead>
+</table>
