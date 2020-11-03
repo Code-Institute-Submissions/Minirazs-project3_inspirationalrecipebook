@@ -1,0 +1,10 @@
+
+
+
+
+<select id="ingredients" name="ingredientlist" form="ingredientform">
+    {%for each_ingredient in all_ingredients %} 
+    <option value="{{each_ingredient.name}}">{{each_ingredient.name}}</option> 
+
+    {%endfor%}
+</select>
