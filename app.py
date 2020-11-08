@@ -33,7 +33,15 @@ def show_recipes():
     all_recipes = db.recipes.find()
     return render_template('all_recipes.template.html', all_recipes=all_recipes)
 
+# route to create recipe
+@app.route('/recipe/create')
+def show_create_recipes():
+    return render_template('create_recipe.template.html')
 
+# route to process recipe form
+@app.route('/recipe/create', methods=['POST'])
+def process_create_recipes():
+    
 
 # "magic code" -- boilerplate
 #if __name__ == '__main__':

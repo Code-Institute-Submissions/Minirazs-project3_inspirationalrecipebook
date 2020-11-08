@@ -4,16 +4,23 @@
             <th>Recipe Name</th>
             <th>Description</th>
             <th>Number of Servings</th>
+            <th>Ingredients</th>
             <th>Directions</th>
             <th>Cuisine Type</th>
             <th>Meal Type</th>
             <th>Media</th>
+            <th>Contributor</th> 
         </tr>
         {%for each_recipe in all_recipes %}
             <tr>
                 <td>{{each_recipe.name}}</td> 
                 <td>{{each_recipe.description}}</td>
                 <td>{{each_recipe.servings}}</td>
+                <td>
+                    {% for ingredient in each_recipe.ingredients %}
+                    <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
+                    {% endfor %}
+                </td>
                 <td>
                     {% for direction in each_recipe.directions %}
                     <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
