@@ -16,7 +16,7 @@
                 <td>{{each_recipe.servings}}</td>
                 <td>
                     {% for direction in each_recipe.directions %}
-                    <p>{{loop.index}}. {{direction}}</p>
+                    <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
                     {% endfor %}
                 </td>
                 <td>{{each_recipe.cuisine}}</td>
