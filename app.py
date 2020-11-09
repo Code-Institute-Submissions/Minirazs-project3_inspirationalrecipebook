@@ -89,6 +89,13 @@ def show_recipe(recipe_id):
     })
     return render_template('one_recipe.template.html', recipe=recipe)
 
+@app.route('/recipes/edit/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipe=db.recipes.find_one({
+        '_id': ObjectId(recipe_id)
+    })
+    return render_template('edit_recipe.template.html', recipe=recipe)
+
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
     # app.run(host=os.environ.get('IP'),     #must give a host (IP address)

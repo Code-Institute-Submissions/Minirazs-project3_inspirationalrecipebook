@@ -3,6 +3,15 @@
 {%block content %}
 {{recipe}}
 
+    <h3>Ingredients</h3>
+    {% for ingredient in recipe.ingredients %}
+    <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
+    {% endfor %}
+
+    <h3>Directions</h3>
+    {% for direction in recipe.directions %}
+    <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
+    {% endfor %}
 
 
 
