@@ -22,16 +22,30 @@
         <label class="form-label">Directions</label>
         <input type="text" class="form-control" name="directions"/>
     </div>
+
+    <!-- <select id="cuisine" name="cuisinelist" form="cuisineform">
+        <option value="chinese">Chinese</option> 
+        <option value="western">Western</option> 
+        <option value="hainanese">Hainanese</option> 
+    </select> -->
+    <input type="checkbox" id="cuisine1" name="cuisine1" value="chinese">
+    <label for="cuisine1"> Chinese</label><br>
+    <input type="checkbox" id="cuisine2" name="cuisine2" value="western">
+    <label for="cuisine2"> Western</label><br>
+    <input type="checkbox" id="cuisine3" name="cuisine3" value="hainanese">
+    <label for="cuisine3"> Hainanese</label>
+    <br> 
+    <select id="mealtype" name="mealtype" form="mealtype">
+        <option value="breakfast">Breakfast</option> 
+        <option value="maincourse">Main Course</option> 
+        <option value="soup">Soup</option> 
+        <option value="dessert">Dessert</option> 
+        <option value="festive">Festive</option> 
+    </select>
+    <br>
+
     <div>
-        <label class="form-label">Cuisine</label>
-        <input type="text" class="form-control" name="cuisine"/>
-    </div>
-    <div>
-        <label class="form-label">Meal Type</label>
-        <input type="text" class="form-control" name="meal_type"/>
-    </div>
-    <div>
-        <label class="form-label">Media</label>
+        <label class="form-label">Media URL</label>
         <input type="text" class="form-control" name="media"/>
     </div>
     <div>
@@ -42,15 +56,9 @@
         <label class="form-label">Contributor Email</label>
         <input type="text" class="form-control" name="email"/>
     </div>
+
     <input type="submit" class="btn btn-primary"/>
 </form>
-
-<select id="ingredients" name="ingredientlist" form="ingredientform">
-    {%for each_ingredient in all_ingredients %} 
-    <option value="{{each_ingredient.name}}">{{each_ingredient.name}}</option> 
-
-    {%endfor%}
-</select>
 
 {%endblock%}
 

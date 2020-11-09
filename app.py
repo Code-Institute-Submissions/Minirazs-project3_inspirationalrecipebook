@@ -39,14 +39,14 @@ def show_recipes():
 # route to create recipe
 
 
-@app.route('/recipe/create')
+@app.route('/recipes/create')
 def show_create_recipes():
     return render_template('create_recipe.template.html')
 
 # route to process recipe form
 
 
-@app.route('/recipe/create', methods=['POST'])
+@app.route('/recipes/create', methods=['POST'])
 def process_create_recipes():
     name = request.form.get('recipe_name')
     description = request.form.get('description')
@@ -76,10 +76,18 @@ def process_create_recipes():
         'email': email
     }
 
-    db.recipes.insert_one(new_record)
-    flash("New recipe created successful", "success")
-    return redirect(url_for('show_recipes'))
+    result = db.recipes.insert_one(new_record)
+    print(result.inserted_id)
+    flash("New recipe created successfully", "success")
+    return redirect(url_for('show_recipe', recipe_id=result.inserted_id))
 
+# viewing 1 recipe
+@ app.route('/recipes/view/<recipe_id>')
+def show_recipe(recipe_id):
+    recipe=db.recipes.find_one({
+        '_id': ObjectId(recipe_id)
+    })
+    return render_template('one_recipe.template.html', recipe=recipe)
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':

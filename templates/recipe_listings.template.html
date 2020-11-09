@@ -12,7 +12,19 @@
             <th>Contributor</th> 
         </tr>
         {%for each_recipe in all_recipes %}
-            <tr>
+
+        <!-- image / Name / first 100 characters of description on the card -->
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">each_recipe.name</h5>
+              <p class="card-text">{{ each_recipe.description| truncate(150) }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+
+            <!-- <tr>
                 <td>{{each_recipe.name}}</td> 
                 <td>{{each_recipe.description}}</td>
                 <td>{{each_recipe.servings}}</td>
@@ -32,7 +44,7 @@
                 <td>
                    
                 </td>
-            </tr>
+            </tr> -->
         {%endfor%}
     </thead>
 </table>
