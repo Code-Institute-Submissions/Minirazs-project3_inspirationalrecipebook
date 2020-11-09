@@ -53,7 +53,7 @@ def process_create_recipes():
     servings = request.form.get('servings')
     ingredients = request.form.get('ingredients')
     directions = request.form.get('directions')
-    cuisine = request.form.get('cuisine')
+    cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
     contributor = request.form.get('contributor')
@@ -67,8 +67,8 @@ def process_create_recipes():
         'name': name,
         'description': description,
         'servings': servings,
-        'ingredients': ingredients,
-        'directions': directions,
+        'ingredients': ingredients.split(','),
+        'directions': directions.split(','),
         'cuisine': cuisine,
         'meal_type': meal_type,
         'media': media,

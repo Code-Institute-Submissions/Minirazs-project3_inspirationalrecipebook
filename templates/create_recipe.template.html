@@ -6,20 +6,22 @@
         <label class="form-label">Recipe Name</label>
         <input type="text" class="form-control" name="recipe_name"/>
     </div>
-    <div>
-        <label class="form-label">Description</label>
-        <input type="text" class="form-control" name="description"/>
+    <div class="form-group">
+        <label for="descriptiontextarea">Description</label>
+        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3"></textarea>
     </div>
     <div>
         <label class="form-label">Servings</label>
         <input type="number" class="form-control" name="servings"/>
     </div>
-    <div>
-        <label class="form-label">Ingredients</label>
-        <input type="text" class="form-control" name="ingredients"/>
+    <div class="form-group">
+        <label for="ingredientstextarea">Ingredients</label>
+        <h6>Please put a comma after each ingredient and its measurement</h6>
+        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="3"></textarea>
     </div>
     <div>
         <label class="form-label">Directions</label>
+        <h6>Please put a comma after each step on its own line</h6>
         <input type="text" class="form-control" name="directions"/>
     </div>
 
@@ -28,14 +30,14 @@
         <option value="western">Western</option> 
         <option value="hainanese">Hainanese</option> 
     </select> -->
-    <input type="checkbox" id="cuisine1" name="cuisine1" value="chinese">
-    <label for="cuisine1"> Chinese</label><br>
-    <input type="checkbox" id="cuisine2" name="cuisine2" value="western">
-    <label for="cuisine2"> Western</label><br>
-    <input type="checkbox" id="cuisine3" name="cuisine3" value="hainanese">
-    <label for="cuisine3"> Hainanese</label>
+    <h3>Cuisine</h3>
+    <select name="cuisine" id="cuisine" multiple>
+      <option value="chinese">Chinese</option>
+      <option value="western">Western</option>
+      <option value="hainanese">Hainanese</option>
+    </select>
     <br> 
-    <select id="mealtype" name="mealtype" form="mealtype">
+    <select id="meal_type" name="meal_type">
         <option value="breakfast">Breakfast</option> 
         <option value="maincourse">Main Course</option> 
         <option value="soup">Soup</option> 
@@ -49,11 +51,11 @@
         <input type="text" class="form-control" name="media"/>
     </div>
     <div>
-        <label class="form-label">Contributor Name</label>
+        <label class="form-label">Contributor Name (This will not be displayed on the Recipe page)</label>
         <input type="text" class="form-control" name="contributor"/>
     </div>
     <div>
-        <label class="form-label">Contributor Email</label>
+        <label class="form-label">Contributor Email </label>
         <input type="text" class="form-control" name="email"/>
     </div>
 
