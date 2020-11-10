@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import os
 import pymongo
+import re
 # from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
@@ -63,12 +64,28 @@ def process_create_recipes():
         flash("Name cannot be empty", "error")
         return render_template('create_recipe.template.html')
 
+    pre_ingredients = ingredients.split(';')
+    new_ingredients = []
+    for p in pre_ingredients:
+        if re.search('[a-zA-Z]', p) is True:
+            new_ingredients.append(p)
+
+    print(new_ingredients)
+
+    pre_directions = directions.split(';')
+    new_directions = []
+    for d in pre_directions:
+        if re.search('[a-zA-Z]', d) is True:
+            new_directions.append(d)
+
+    print(new_directions)
+
     new_record = {
         'name': name,
         'description': description,
         'servings': servings,
-        'ingredients': ingredients.split(','),
-        'directions': directions.split(','),
+        'ingredients': new_ingredients,
+        'directions': new_directions,
         'cuisine': cuisine,
         'meal_type': meal_type,
         'media': media,
@@ -82,22 +99,26 @@ def process_create_recipes():
     return redirect(url_for('show_recipe', recipe_id=result.inserted_id))
 
 # viewing 1 recipe
+
+
 @ app.route('/recipes/view/<recipe_id>')
 def show_recipe(recipe_id):
-    recipe=db.recipes.find_one({
+    recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
     })
     return render_template('one_recipe.template.html', recipe=recipe)
 
+
 @app.route('/recipes/edit/<recipe_id>')
 def edit_recipe(recipe_id):
-    recipe=db.recipes.find_one({
+    recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
     })
     return render_template('edit_recipe.template.html', recipe=recipe)
 
+
 @app.route('/recipes/edit/<recipe_id>', methods=['POST'])
-def process_edit_recipes():
+def process_edit_recipes(recipe_id):
     name = request.form.get('recipe_name')
     description = request.form.get('description')
     servings = request.form.get('servings')
@@ -109,15 +130,31 @@ def process_edit_recipes():
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
-    result = db.recipes.update_one({
+    pre_ingredients = ingredients.split(';')
+    new_ingredients = []
+    for p in pre_ingredients:
+        if re.search('[a-zA-Z]', p):
+            new_ingredients.append(p)
+
+    print(new_ingredients)
+
+    pre_directions = directions.split(';')
+    new_directions = []
+    for d in pre_directions:
+        if re.search('[a-zA-Z]', d):
+            new_directions.append(d)
+
+    print(new_directions)
+
+    db.recipes.update_one({
         "_id": ObjectId(recipe_id)
     }, {
         '$set': {
             'name': name,
             'description': description,
             'servings': servings,
-            'ingredients': ingredients.split(','),
-            'directions': directions.split(','),
+            'ingredients': new_ingredients,
+            'directions': new_directions,
             'cuisine': cuisine,
             'meal_type': meal_type,
             'media': media,
@@ -126,11 +163,8 @@ def process_edit_recipes():
         }
     })
 
-    print(result.upserted_id)
     flash("Recipe edited successfully", "success")
-    return redirect(url_for('show_recipe', recipe_id=result.upserted_id))
-
-
+    return redirect(url_for('show_recipe', recipe_id=recipe_id))
 
 
 # "magic code" -- boilerplate
