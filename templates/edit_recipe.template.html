@@ -1,6 +1,65 @@
 {% extends 'base.template.html' %}
 
 {%block content %}
+<form method="POST">
+    <div>
+        <label class="form-label">Recipe Name</label>
+        <input type="text" class="form-control" name="recipe_name" value="{{recipe.name}}"/>
+    </div>
+    <div class="form-group">
+        <label for="descriptiontextarea">Description</label>
+        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" value="{{recipe.description}}"></textarea>
+    </div>
+    <div>
+        <label class="form-label">Servings</label>
+        <input type="number" class="form-control" name="servings" value="{{recipe.servings}}"/>
+    </div>
+    <div class="form-group">
+        <label for="ingredientstextarea">Ingredients</label>
+        <h6>Please put a comma after each ingredient and its measurement. e.g. 1 tbsp of salt, 1 tsp soy sauce</h6>
+        {% for ingredient in recipe.ingredients %}
+        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="5">{{ingredient}}, </textarea>
+        {% endfor %}
+    </div>
 
+    <div class="form-group">
+        <label for="directionstextarea">Directions</label>
+        <h6>Please put a comma after each step</h6>
+        {% for direction in recipe.directions %}
+        <textarea class="form-control" id="directionstextarea" name="directions" rows="5">{{direction}}, </textarea>
+        {% endfor %}
+    </div>
+
+    <h3>Cuisine</h3>
+    <select name="cuisine" id="cuisine" multiple>
+      <option value="chinese">Chinese</option>
+      <option value="western">Western</option>
+      <option value="hainanese">Hainanese</option>
+    </select>
+    <br> 
+    <select id="meal_type" name="meal_type">
+        <option value="breakfast">Breakfast</option> 
+        <option value="maincourse">Main Course</option> 
+        <option value="soup">Soup</option> 
+        <option value="dessert">Dessert</option> 
+        <option value="festive">Festive</option> 
+    </select>
+    <br>
+
+    <div>
+        <label class="form-label">Media URL</label>
+        <input type="text" class="form-control" name="media" value="{{recipe.media}}"/>
+    </div>
+    <div>
+        <label class="form-label">Contributor Name (This will not be displayed on the Recipe page)</label>
+        <input type="text" class="form-control" name="contributor" value="{{recipe.contributor}}"/>
+    </div>
+    <div>
+        <label class="form-label">Contributor Email </label>
+        <input type="text" class="form-control" name="email" value="{{recipe.email}}"/>
+    </div>
+
+    <input type="submit" class="btn btn-primary"/>
+</form>
 
 {%endblock%}

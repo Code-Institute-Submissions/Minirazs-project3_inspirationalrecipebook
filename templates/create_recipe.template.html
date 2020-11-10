@@ -16,20 +16,16 @@
     </div>
     <div class="form-group">
         <label for="ingredientstextarea">Ingredients</label>
-        <h6>Please put a comma after each ingredient and its measurement</h6>
-        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="3"></textarea>
-    </div>
-    <div>
-        <label class="form-label">Directions</label>
-        <h6>Please put a comma after each step on its own line</h6>
-        <input type="text" class="form-control" name="directions"/>
+        <h6>Please put a comma after each ingredient and its measurement. e.g. 1 tbsp of salt, 1 tsp soy sauce</h6>
+        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="5"></textarea>
     </div>
 
-    <!-- <select id="cuisine" name="cuisinelist" form="cuisineform">
-        <option value="chinese">Chinese</option> 
-        <option value="western">Western</option> 
-        <option value="hainanese">Hainanese</option> 
-    </select> -->
+    <div class="form-group">
+        <label for="directionstextarea">Directions</label>
+        <h6>Please put a comma after each step</h6>
+        <textarea class="form-control" id="directionstextarea" name="directions" rows="5"></textarea>
+    </div>
+
     <h3>Cuisine</h3>
     <select name="cuisine" id="cuisine" multiple>
       <option value="chinese">Chinese</option>
