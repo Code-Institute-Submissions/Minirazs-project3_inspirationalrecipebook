@@ -96,6 +96,43 @@ def edit_recipe(recipe_id):
     })
     return render_template('edit_recipe.template.html', recipe=recipe)
 
+@app.route('/recipes/edit/<recipe_id>', methods=['POST'])
+def process_edit_recipes():
+    name = request.form.get('recipe_name')
+    description = request.form.get('description')
+    servings = request.form.get('servings')
+    ingredients = request.form.get('ingredients')
+    directions = request.form.get('directions')
+    cuisine = request.form.getlist('cuisine')
+    meal_type = request.form.get('meal_type')
+    media = request.form.get('media')
+    contributor = request.form.get('contributor')
+    email = request.form.get('email')
+
+    result = db.recipes.update_one({
+        "_id": ObjectId(recipe_id)
+    }, {
+        '$set': {
+            'name': name,
+            'description': description,
+            'servings': servings,
+            'ingredients': ingredients.split(','),
+            'directions': directions.split(','),
+            'cuisine': cuisine,
+            'meal_type': meal_type,
+            'media': media,
+            'contributor': contributor,
+            'email': email
+        }
+    })
+
+    print(result.upserted_id)
+    flash("Recipe edited successfully", "success")
+    return redirect(url_for('show_recipe', recipe_id=result.upserted_id))
+
+
+
+
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
     # app.run(host=os.environ.get('IP'),     #must give a host (IP address)
