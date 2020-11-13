@@ -166,6 +166,40 @@ def process_edit_recipes(recipe_id):
     flash("Recipe edited successfully", "success")
     return redirect(url_for('show_recipe', recipe_id=recipe_id))
 
+@app.route('/recipes/search')
+def show_search_form():
+    return render_template('search.template.html')
+
+@app.route('/recipes/search', methods=['POST'])
+def process_search_form():
+    name = request.form.get('name')
+
+    tags = request.form.getlist('tags')
+
+    print(tags)
+
+    critera = {}
+
+    if name:
+        critera['name'] = {
+            '$regex': name,
+            '$options': 'i'  # i means 'case-insensitive'
+        }
+
+    if len(tags) > 0:
+        critera['tags'] = {
+            '$in': tags
+        }
+
+    print(critera)
+
+    results = db.recipes.find(critera)
+    return render_template('display_results.template.html',
+                           all_recipes=results,
+                           name=name)
+
+
+
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
