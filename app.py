@@ -173,10 +173,8 @@ def show_search_form():
 @app.route('/recipes/search', methods=['POST'])
 def process_search_form():
     name = request.form.get('name')
-
-    tags = request.form.getlist('tags')
-
-    print(tags)
+    cuisine = request.form.getlist('cuisine')
+    meal_type = request.form.get('meal_type')
 
     critera = {}
 
@@ -186,10 +184,16 @@ def process_search_form():
             '$options': 'i'  # i means 'case-insensitive'
         }
 
-    if len(tags) > 0:
-        critera['tags'] = {
-            '$in': tags
+    if len(cuisine) > 0:
+        critera['cuisine'] = {
+            '$in': cuisine
         }
+    
+    # if meal_type:
+    #     critera['meal_type'] = {
+    #         '$regex': meal_type,
+    #         '$options': 'i'  # i means 'case-insensitive'
+    #     }
 
     print(critera)
 

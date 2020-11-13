@@ -1,11 +1,49 @@
 {% extends 'base.template.html' %}
 
 {%block content %}
-
-
-
-
-
-
+<form method="POST">
+	<div class="row">
+		<div class="col">
+			<label>Recipe Name</label>
+			<input type="text" class="form-control" name="name"/>
+        </div>
+        <!-- <div class="col">
+            <label>Cuisine</label>
+            <div>
+                <input type="checkbox" name="cuisine" value="chinese" class="mr-2"/>Chinese
+                <input type="checkbox" name="cuisine" value="western" class="mr-2"/>Western
+                <input type="checkbox" name="cuisine" value="hainanese" class="mr-2"/>Hainanese
+            </div>
+        </div>
+        <div class="col">
+            <label>Meal Type</label>
+            <div>
+                <input type="checkbox" name="cuisine" value="breakfast" class="mr-2"/>Breakfast
+                <input type="checkbox" name="cuisine" value="maincourse" class="mr-2"/>Main Course
+                <input type="checkbox" name="cuisine" value="soup" class="mr-2"/>Soup
+                <input type="checkbox" name="cuisine" value="dessert" class="mr-2"/>Dessert
+                <input type="checkbox" name="cuisine" value="festive" class="mr-2"/>Festive
+            </div>
+        </div> -->
+        <h5>Cuisine</h5>
+        <p>Please press SHIFT key to select multiple options</p>
+        <select name="cuisine" id="cuisine" multiple>
+            <option value="chinese">Chinese</option>
+            <option value="western">Western</option>
+            <option value="hainanese">Hainanese</option>
+        </select>
+        <br> 
+        <br>
+        <h5>Meal Type</h5>
+        <select id="meal_type" name="meal_type">
+            <option value="breakfast">Breakfast</option> 
+            <option value="maincourse">Main Course</option> 
+            <option value="soup">Soup</option> 
+            <option value="dessert">Dessert</option> 
+            <option value="festive">Festive</option> 
+        </select>
+    </div>
+    <input type="submit" value="Search" class="btn btn-primary mt-3"/>
+</form>
 
 {%endblock%}

@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
     <thead>
         <tr>
             <th>Recipe Name</th>
@@ -10,7 +10,7 @@
             <th>Meal Type</th>
             <th>Media</th>
             <th>Contributor</th> 
-        </tr>
+        </tr> -->
         {%for each_recipe in all_recipes %}
 
         <!-- image / Name / first 100 characters of description on the card -->
@@ -21,7 +21,7 @@
               <p class="card-text">{{ each_recipe.description| truncate(150) }}</p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-          </div>
+        </div>
 
 
             <!-- <tr>
@@ -46,5 +46,5 @@
                 </td>
             </tr> -->
         {%endfor%}
-    </thead>
-</table>
+    <!-- </thead>
+</table> -->
