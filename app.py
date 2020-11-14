@@ -225,11 +225,14 @@ def confirm_delete(recipe_id):
     })
 
     print(recipe_to_delete)
+    print(recipe_to_delete['email'])
 
-    if email == recipe_to_delete.email:
+    if email == recipe_to_delete['email']:
         db.recipes.remove({
             "_id": ObjectId(recipe_id)
         })
+        flash("Recipe is successfully deleted", "success")
+
     else:
         flash("You have typed the incorrect contributor email! Recipe cannot be deleted", "error")
 
