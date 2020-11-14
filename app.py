@@ -69,7 +69,7 @@ def process_create_recipes():
     pre_ingredients = ingredients.split(';')
     new_ingredients = []
     for p in pre_ingredients:
-        if re.search('[a-zA-Z]', p) is True:
+        if re.search('[a-zA-Z]', p):
             new_ingredients.append(p)
 
     print(new_ingredients)
@@ -77,7 +77,7 @@ def process_create_recipes():
     pre_directions = directions.split(';')
     new_directions = []
     for d in pre_directions:
-        if re.search('[a-zA-Z]', d) is True:
+        if re.search('[a-zA-Z]', d):
             new_directions.append(d)
 
     print(new_directions)
@@ -187,16 +187,18 @@ def process_search_form():
             '$options': 'i'  # i means 'case-insensitive'
         }
 
-    if len(cuisine) > 0:
+    if len(cuisine) > 0 and cuisine[0] != "":
         critera['cuisine'] = {
             '$in': cuisine
         }
     
-    # if meal_type:
-    #     critera['meal_type'] = {
-    #         '$regex': meal_type,
-    #         '$options': 'i'  # i means 'case-insensitive'
-    #     }
+    print(cuisine)
+
+    if meal_type:
+        critera['meal_type'] = {
+            '$regex': meal_type,
+            '$options': 'i'  # i means 'case-insensitive'
+        }
 
     print(critera)
 
