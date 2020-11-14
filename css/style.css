@@ -6,3 +6,17 @@
     width: 33px; 
 
 }
+
+
+#all_recipes {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card {
+    margin: 20px;
+    font-family: sans-serif;
+}

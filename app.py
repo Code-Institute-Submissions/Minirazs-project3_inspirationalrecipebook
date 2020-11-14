@@ -35,6 +35,7 @@ def home():
 @app.route('/recipes')
 def show_recipes():
     all_recipes = db.recipes.find()
+    print(all_recipes)
     return render_template('all_recipes.template.html', all_recipes=all_recipes)
 
 # route to create recipe
@@ -57,6 +58,7 @@ def process_create_recipes():
     cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
+    image= request.form.get('image')
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
@@ -89,6 +91,7 @@ def process_create_recipes():
         'cuisine': cuisine,
         'meal_type': meal_type,
         'media': media,
+        'image': image,
         'contributor': contributor,
         'email': email
     }
@@ -99,8 +102,6 @@ def process_create_recipes():
     return redirect(url_for('show_recipe', recipe_id=result.inserted_id))
 
 # viewing 1 recipe
-
-
 @ app.route('/recipes/view/<recipe_id>')
 def show_recipe(recipe_id):
     recipe = db.recipes.find_one({
@@ -127,6 +128,7 @@ def process_edit_recipes(recipe_id):
     cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
+    image = request.form.get('image')
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
@@ -158,6 +160,7 @@ def process_edit_recipes(recipe_id):
             'cuisine': cuisine,
             'meal_type': meal_type,
             'media': media,
+            'image': image,
             'contributor': contributor,
             'email': email
         }
@@ -202,8 +205,33 @@ def process_search_form():
                            all_recipes=results,
                            name=name)
 
+@app.route('/recipes/delete/<recipe_id>')
+def show_confirm_delete(recipe_id):
+    # should use find_one, expecting one result
+    recipe_to_delete = db.recipes.find_one({
+        '_id': ObjectId(recipe_id)
+    })
+    return render_template('show_confirm_delete.template.html',
+                           recipe=recipe_to_delete)
 
+@app.route('/recipes/delete/<recipe_id>', methods=["POST"])
+def confirm_delete(recipe_id):
+    email = request.form.get('email')
 
+    recipe_to_delete = db.recipes.find_one({
+        '_id': ObjectId(recipe_id)
+    })
+
+    print(recipe_to_delete)
+
+    if email == recipe_to_delete.email:
+        db.recipes.remove({
+            "_id": ObjectId(recipe_id)
+        })
+    else:
+        flash("You have typed the incorrect contributor email! Recipe cannot be deleted", "error")
+
+    return redirect(url_for('show_recipes'))
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':

@@ -1,50 +1,16 @@
-<!-- <table class="table">
-    <thead>
-        <tr>
-            <th>Recipe Name</th>
-            <th>Description</th>
-            <th>Number of Servings</th>
-            <th>Ingredients</th>
-            <th>Directions</th>
-            <th>Cuisine Type</th>
-            <th>Meal Type</th>
-            <th>Media</th>
-            <th>Contributor</th> 
-        </tr> -->
-        {%for each_recipe in all_recipes %}
 
-        <!-- image / Name / first 100 characters of description on the card -->
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">each_recipe.name</h5>
-              <p class="card-text">{{ each_recipe.description| truncate(150) }}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div id="all_recipes">
+            {%for each_recipe in all_recipes %}
+
+            <!-- image / Name / first 100 characters of description on the card -->
+            <div class="card" style="max-width: 540px;">
+                <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}" ><img src="{{ each_recipe.image }}" class="card-img-top" alt="{{each_recipe.name}}"></a>
+                <div class="card-body">
+                    <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}" ><h5 class="card-title">{{ each_recipe.name }}</h5></a>
+                    <p class="card-text">{{ each_recipe.description| truncate(150) }}</p>
+                </div>
             </div>
+            {%endfor%}    
         </div>
 
-
-            <!-- <tr>
-                <td>{{each_recipe.name}}</td> 
-                <td>{{each_recipe.description}}</td>
-                <td>{{each_recipe.servings}}</td>
-                <td>
-                    {% for ingredient in each_recipe.ingredients %}
-                    <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
-                    {% endfor %}
-                </td>
-                <td>
-                    {% for direction in each_recipe.directions %}
-                    <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
-                    {% endfor %}
-                </td>
-                <td>{{each_recipe.cuisine}}</td>
-                <td>{{each_recipe.meal_type}}</td>
-                <td>{{each_recipe.media}}</td>
-                <td>
-                   
-                </td>
-            </tr> -->
-        {%endfor%}
-    <!-- </thead>
-</table> -->
+            

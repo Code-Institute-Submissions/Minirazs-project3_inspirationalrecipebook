@@ -13,6 +13,9 @@
     <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
     {% endfor %}
 
-  
+    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success">Edit</a>
+
+    <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a> 
+
 
 {%endblock%}

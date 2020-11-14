@@ -78,9 +78,15 @@
     <br>
 
     <div>
-        <label class="form-label">Media URL</label>
+        <label class="form-label">Video URL</label>
         <input type="text" class="form-control" name="media" value="{{recipe.media}}"/>
     </div>
+
+    <div>
+        <label class="form-label">Image</label>
+        <input type="text" class="form-control" name="image" value="{{recipe.image}}"/>
+    </div>
+
     <div>
         <label class="form-label">Contributor Name (This will not be displayed on the Recipe page)</label>
         <input type="text" class="form-control" name="contributor" value="{{recipe.contributor}}"/>
@@ -89,8 +95,10 @@
         <label class="form-label">Contributor Email </label>
         <input type="text" class="form-control" name="email" value="{{recipe.email}}"/>
     </div>
+    <br>
+    <input type="submit" class="btn btn-success"/>
 
-    <input type="submit" class="btn btn-primary"/>
+    <a href="{{ url_for('show_recipe', recipe_id=recipe._id ) }}" class="btn btn-primary">Back to this Recipe</a>
 </form>
 
 {%endblock%}
