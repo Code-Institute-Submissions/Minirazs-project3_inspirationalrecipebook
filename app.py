@@ -44,10 +44,14 @@ def show_recipes():
 
 # route to create recipe
 
+@app.route('/recipes/uploadimage')
+def upload_image():
+    return render_template('uploadimage.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
+
 
 @app.route('/recipes/create')
 def show_create_recipes():
-    return render_template('create_recipe.template.html', CLOUD_NAME=CLOUD_NAME, UPLOAD_PRESET=UPLOAD_PRESET)
+    return render_template('create_recipe.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 # route to process recipe form
 
@@ -62,7 +66,7 @@ def process_create_recipes():
     cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
-    image= request.form.get('image')
+    image = request.form.get('image')
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
@@ -106,6 +110,8 @@ def process_create_recipes():
     return redirect(url_for('show_recipe', recipe_id=result.inserted_id))
 
 # viewing 1 recipe
+
+
 @ app.route('/recipes/view/<recipe_id>')
 def show_recipe(recipe_id):
     recipe = db.recipes.find_one({
@@ -173,9 +179,11 @@ def process_edit_recipes(recipe_id):
     flash("Recipe edited successfully", "success")
     return redirect(url_for('show_recipe', recipe_id=recipe_id))
 
+
 @app.route('/recipes/search')
 def show_search_form():
     return render_template('search.template.html')
+
 
 @app.route('/recipes/search', methods=['POST'])
 def process_search_form():
@@ -195,7 +203,7 @@ def process_search_form():
         critera['cuisine'] = {
             '$in': cuisine
         }
-    
+
     print(cuisine)
 
     if meal_type:
@@ -211,6 +219,7 @@ def process_search_form():
                            all_recipes=results,
                            name=name)
 
+
 @app.route('/recipes/delete/<recipe_id>')
 def show_confirm_delete(recipe_id):
     # should use find_one, expecting one result
@@ -219,6 +228,7 @@ def show_confirm_delete(recipe_id):
     })
     return render_template('show_confirm_delete.template.html',
                            recipe=recipe_to_delete)
+
 
 @app.route('/recipes/delete/<recipe_id>', methods=["POST"])
 def confirm_delete(recipe_id):
@@ -241,6 +251,7 @@ def confirm_delete(recipe_id):
         flash("You have typed the incorrect contributor email! Recipe cannot be deleted", "error")
 
     return redirect(url_for('show_recipes'))
+
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
