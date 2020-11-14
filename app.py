@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import os
 import pymongo
 import re
+import gallery
 # from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
@@ -66,7 +67,7 @@ def process_create_recipes():
     cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
-    image = request.form.get('image')
+    image = request.form.get('uploaded_file_url')
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
@@ -138,7 +139,7 @@ def process_edit_recipes(recipe_id):
     cuisine = request.form.getlist('cuisine')
     meal_type = request.form.get('meal_type')
     media = request.form.get('media')
-    image = request.form.get('image')
+    image = request.form.get('uploaded_file_url')
     contributor = request.form.get('contributor')
     email = request.form.get('email')
 
