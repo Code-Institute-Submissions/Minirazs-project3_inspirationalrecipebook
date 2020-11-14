@@ -24,6 +24,10 @@ db = client[DB_NAME]
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
 
+# cloudinary image upload
+CLOUD_NAME = os.environ.get('CLOUD_NAME')
+UPLOAD_PRESET = os.environ.get('UPLOAD_PRESET')
+
 
 @app.route('/')
 def home():
