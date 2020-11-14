@@ -47,7 +47,7 @@ def show_recipes():
 
 @app.route('/recipes/create')
 def show_create_recipes():
-    return render_template('create_recipe.template.html')
+    return render_template('create_recipe.template.html', CLOUD_NAME=CLOUD_NAME, UPLOAD_PRESET=UPLOAD_PRESET)
 
 # route to process recipe form
 
