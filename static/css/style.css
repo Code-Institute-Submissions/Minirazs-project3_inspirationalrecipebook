@@ -1,11 +1,18 @@
 p {
     font-size: 20px;
-    font-family: 'Cabin Condensed', sans-serif;
+    font-family: 'Thasadith', sans-serif;
 }
 
+/* h1 {
+    font-family: 'Charmonman', cursive; 
+} */
+
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Cabin Condensed', sans-serif;
-    /* font-family: 'Charmonman', cursive; */
+    font-family: 'Thasadith', sans-serif;
+}
+
+.button-font {
+    font-family: 'Thasadith', sans-serif;
 }
 
 .index {
@@ -89,7 +96,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .footer-copyright {
-    font-family: 'Cabin Condensed', sans-serif;
+    font-family: 'Thasadith', sans-serif;
 }
 
 .footer-links {

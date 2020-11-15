@@ -4,7 +4,7 @@
 {{recipe}}
 <div class="container">
     <div class="row">
-        <h1>{{recipe.name}}</h1>
+        <h1 class="cursive">{{recipe.name}}</h1>
     </div>
     <div class="row">
         {% if recipe.contributor == "Chef & Grandson" %}
@@ -50,13 +50,13 @@
     <br>
     <div class="row">
 
-        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success button">Edit</a>
+        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success button button-font">Edit</a>
 
-        <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger button">Delete</a> 
+        <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger button button-font">Delete</a> 
         
 
 
-        <a href="{{ url_for('show_recipes')}}" class="btn btn-primary button">Return to Recipes</a> 
+        <a href="{{ url_for('show_recipes')}}" class="btn btn-primary button button-font">Return to Recipes</a> 
     </div>
     
     <div id="share_recipe">
