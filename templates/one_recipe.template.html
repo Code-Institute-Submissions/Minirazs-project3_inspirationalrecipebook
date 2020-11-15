@@ -23,9 +23,12 @@
     <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
     {% endfor %}
 
+    {% if recipe.contributor != "Chef & Grandson" %}
     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success">Edit</a>
 
     <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a> 
+    
+    {% endif %}
 
-    <a href="{{ url_for('show_recipes'}}" class="btn btn-primary">Return to Recipes</a> 
+    <a href="{{ url_for('show_recipes')}}" class="btn btn-primary">Return to Recipes</a> 
 {%endblock%}
