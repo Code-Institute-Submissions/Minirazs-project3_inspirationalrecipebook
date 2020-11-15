@@ -15,22 +15,34 @@
         <p>{{recipe.description}}</p>
     </div>
 
-    <div class="row">
-        <iframe class="embed-responsive-item" width="560" height="315" src="{{recipe.media}}" allowfullscreen></iframe>   
-    </div>
-
+    {% if recipe.media != "" %}
+        <div class="row">
+            <iframe class="embed-responsive-item" width="560" height="315" src="{{recipe.media}}" allowfullscreen></iframe>   
+        </div>
+    {% else %}
+        <div class="row">
+            <img src="{{recipe.image}}" style="width: 640px; height: 360px; object-fit: contain; overflow: hidden;" alt="{{recipe.name}}">
+        </div>
+    {% endif %}
+    <br>
     <div class="row">
         <h3>Ingredients</h3>
+        
+        <ul id="ingredients_display" class="list-unstyled">
         {% for ingredient in recipe.ingredients %}
-        <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
+            <li><span class='index'>{{loop.index}}</span>. {{ingredient}}</li>
         {% endfor %}
+        </ul>
     </div>
-
+    <br>
     <div class="row">
         <h3>Directions</h3>
+        
+        <ul id="directions_display" class="list-unstyled">
         {% for direction in recipe.directions %}
-        <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
+            <li><span class='index'>{{loop.index}}</span>. {{direction}}</li>
         {% endfor %}
+        </ul>
     </div>
 
     <div class="row">
