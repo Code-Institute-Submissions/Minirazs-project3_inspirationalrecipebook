@@ -52,12 +52,12 @@
         <label class="form-label"><h5>YouTube Video URL</h5></label>
         <p>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function, e.g. <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></p>
 
-        <input type="text" class="form-control" name="media" value="{{recipe.media}}" 
-        pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"/>
+        <input type="text" class="form-control" name="media" pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"/>
     </div>
     <br>
     <div>
         <label><h5>Recipe Image</h5></label>
+        <p>Image is best displayed at width 640px and height 360 px</p>
     </div>
     <div>
         <a id="upload_widget" class="cloudinary-button">Upload image</a>
@@ -88,7 +88,8 @@
 <script type="text/javascript">  
     var myWidget = cloudinary.createUploadWidget({
         cloudName: "{{cloudName}}", 
-        uploadPreset: "{{uploadPreset}}"}, 
+        uploadPreset: "{{uploadPreset}}", 
+        cropping: true},
         (error, result) => { 
             if (!error && result && result.event === "success") { 
                 console.log('Done! Here is the image info: ', result.info); 
