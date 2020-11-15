@@ -83,8 +83,8 @@
     <br>
     <div>
         <label class="form-label"><h5>YouTube Video URL</h5></label>
-        <p>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function, e.g. 
-            <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></p>
+        <h6>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function, e.g. 
+            <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></h6>
         <input type="text" class="form-control" name="media" value="{{recipe.media}}" 
         pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"/>
     </div>
@@ -92,7 +92,7 @@
     <div>
         <label class="form-label"><h5>Recipe Image</h5></label>
         <br>
-        <img src="{{recipe.image}}" alt="{{recipe.name}}" style="width:320px; height:180px; object-fit: cover;">
+        <img src="{{recipe.image}}" alt="{{recipe.name}}" style="width:320px; height:180px; object-fit: contain;">
     </div>
     <br>
     <div>
@@ -107,14 +107,14 @@
     <br>
     <div>
         <h5>Contributor Info</h5>
-        <label class="form-label">Contributor Name</label>
+        <label class="form-label"><h6>Contributor Name</h6></label>
         <input type="text" class="form-control" name="contributor" value="{{recipe.contributor}}"/>
     </div>
     <div>
-        <label class="form-label">Contributor Email </label>
+        <label class="form-label"><h6>Contributor Email</h6></label>
         <input type="text" class="form-control" name="email" value="{{recipe.email}}"/>
     </div>
-    <p><i>This information will not be displayed with the recipe.</i></p>
+    <h6><i>This information will not be displayed with the recipe.</i></h6>
     <br>
     <input type="submit" class="btn btn-success"/>
 

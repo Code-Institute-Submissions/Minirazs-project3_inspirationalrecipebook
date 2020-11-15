@@ -1,10 +1,11 @@
 p {
     font-size: 20px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Cabin Condensed', sans-serif;
 }
 
-h1, h2, h3, h4, h5{
-    font-family: 'Space Mono', monospace;
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Cabin Condensed', sans-serif;
+    /* font-family: 'Charmonman', cursive; */
 }
 
 .index {
@@ -29,6 +30,20 @@ h1, h2, h3, h4, h5{
     margin: 20px;
     font-family: sans-serif;
 }
+
+.thumbnail{
+    /* position: absolute; */
+    max-height: 200px; 
+    object-fit: contain; 
+    overflow: hidden; 
+    /* transform-origin: 50% 50%; 
+    transition: .2s ease-in-out; */
+}
+
+/* .thumbnail:hover{
+    transform: scale(1.05);
+
+} */
 
 .overall-display {
     margin-top: 30px;
@@ -65,6 +80,16 @@ h1, h2, h3, h4, h5{
     background-color: rgba(191, 36, 49, 1); 
     margin-top: 50px; 
     color: white;
+   
+}
+
+#subscribe {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    font-family: 'Cabin Condensed', sans-serif;
 }
 
 .footer-links {
