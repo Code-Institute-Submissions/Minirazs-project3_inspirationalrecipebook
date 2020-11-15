@@ -2,33 +2,45 @@
 
 {%block content %}
 {{recipe}}
-    <h1>{{recipe.name}}</h1>
-    {% if recipe.contributor == "Chef & Grandson" %}
-    <h5>By Chef & Grandson</h5>
-    {% endif %}
-
-    <p>{{recipe.description}}</p>
-
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="{{recipe.media}}"></iframe>   
+<div class="container">
+    <div class="row">
+        <h1>{{recipe.name}}</h1>
+        {% if recipe.contributor == "Chef & Grandson" %}
+        <h5>By Chef & Grandson</h5>
+        {% endif %}
     </div>
 
-    <h3>Ingredients</h3>
-    {% for ingredient in recipe.ingredients %}
-    <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
-    {% endfor %}
+    <div class="row">
+        <p>{{recipe.description}}</p>
+    </div>
 
-    <h3>Directions</h3>
-    {% for direction in recipe.directions %}
-    <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
-    {% endfor %}
+    <div class="row">
+        <iframe class="embed-responsive-item" width="560" height="315" src="{{recipe.media}}" allowfullscreen></iframe>   
+    </div>
 
-    {% if recipe.contributor != "Chef & Grandson" %}
-    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success">Edit</a>
+    <div class="row">
+        <h3>Ingredients</h3>
+        {% for ingredient in recipe.ingredients %}
+        <p><span class='index'>{{loop.index}}</span>. {{ingredient}}</p>
+        {% endfor %}
+    </div>
 
-    <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a> 
-    
-    {% endif %}
+    <div class="row">
+        <h3>Directions</h3>
+        {% for direction in recipe.directions %}
+        <p><span class='index'>{{loop.index}}</span>. {{direction}}</p>
+        {% endfor %}
+    </div>
 
-    <a href="{{ url_for('show_recipes')}}" class="btn btn-primary">Return to Recipes</a> 
+    <div class="row">
+        {% if recipe.contributor != "Chef & Grandson" %}
+        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success">Edit</a>
+
+        <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a> 
+        
+        {% endif %}
+
+        <a href="{{ url_for('show_recipes')}}" class="btn btn-primary">Return to Recipes</a> 
+    </div>
+</div>
 {%endblock%}
