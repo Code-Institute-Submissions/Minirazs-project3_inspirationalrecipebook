@@ -15,37 +15,50 @@
     
   </head>
   <body>
+    <header>
+      <!-- Banner Video -->
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="img/cooksalmon.mp4" type="video/mp4" title="Cook with us!">
+      </video>
+      
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('show_recipes')}}">Chef & Grandson</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('show_recipes')}}">Recipes <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('show_create_recipes')}}">Share</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <!-- Search bar in navbar -->
+          <form class="form-inline my-2 my-lg-0" method="POST" action="{{url_for('process_search_form')}}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Recipe" aria-label="Search" name="name"/>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      
+      <img id="logo" title="Subscribe to Chef & Grandson's YouTube channel!" src="img/chefngrandson.png" alt="Chef & Grandson logo"/>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{{ url_for('show_recipes')}}">Chef & Grandson</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('show_recipes')}}">Recipes <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('show_create_recipes')}}">Share</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <!-- Search bar in navbar -->
-        <form class="form-inline my-2 my-lg-0" method="POST" action="{{url_for('process_search_form')}}">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search Recipe" aria-label="Search" name="name"/>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-
+        <!-- Youtube API - Subscribe button -->
+        <div id='subscribe'>
+          <div class="g-ytsubscribe" data-channelid="UC5gmNs7t3Wmjs9nI8wc54-Q" data-layout="default" data-count="default"></div>
+        </div>
+      
+    </header>
     <!-- flash messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {%if messages %}
@@ -99,16 +112,16 @@
 
               <ul class="list-unstyled">
                 <li>
-                  <a href="#!" class="footer-links">Link 1</a>
+                  <a href="{{ url_for('show_recipes')}}" class="footer-links">Recipes</a>
                 </li>
                 <li>
-                  <a href="#!" class="footer-links">Link 2</a>
+                  <a href="#!" class="footer-links">About</a>
                 </li>
                 <li>
-                  <a href="#!" class="footer-links">Link 3</a>
+                  <a href="{{ url_for('show_create_recipes')}}" class="footer-links">Share</a>
                 </li>
                 <li>
-                  <a href="#!" class="footer-links">Link 4</a>
+                  <a href="#!" class="footer-links">Contact</a>
                 </li>
               </ul>
             </div>

@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Thasadith', sans-serif;
 }
 
+.nav-item {
+    margin: 0 20px;
+
+}
+
 .index {
     display: inline-block;
     color: #e40c78;
