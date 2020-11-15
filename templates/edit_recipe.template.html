@@ -4,35 +4,35 @@
 <form method="POST">
     <div>
         <label class="form-label"><h5>Recipe Name</h5></label>
-        <input type="text" class="form-control" name="recipe_name" value="{{recipe.name}}"/>
+        <input type="text" class="form-control button-font" name="recipe_name" value="{{recipe.name}}"/>
     </div>
     <br>
     <div class="form-group">
         <label for="descriptiontextarea"><h5>Description</h5></label>
-        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" value="{{recipe.description}}">{{recipe.description}}</textarea>
+        <textarea class="form-control button-font" id="descriptiontextarea" name="description" rows="3" value="{{recipe.description}}">{{recipe.description}}</textarea>
     </div>
     <div>
         <label class="form-label"><h5>Servings</h5></label>
-        <input type="number" class="form-control" name="servings" value="{{recipe.servings}}"/>
+        <input type="number" class="form-control button-font" name="servings" value="{{recipe.servings}}"/>
     </div>
     <br>
     <div class="form-group">
         <label for="ingredientstextarea"><h5>Ingredients</h5></label>
         <h6>Put a semicolon ';' after each measured ingredient, for e.g. 1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato</h6>
 
-        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="5">{% for ingredient in recipe.ingredients %}{{ingredient}}; {% endfor %}</textarea>
+        <textarea class="form-control button-font" id="ingredientstextarea" name="ingredients" rows="5">{% for ingredient in recipe.ingredients %}{{ingredient}}; {% endfor %}</textarea>
     </div>
 
     <div class="form-group">
         <label for="directionstextarea"><h5>Directions</h5></label>
         <h6>Put a semicolon ';' after each step, for e.g. Cut into slices; Soak in water for 10 minutes; Preheat oven</h6>
         
-        <textarea class="form-control" id="directionstextarea" name="directions" rows="5">{% for direction in recipe.directions %}{{direction}}; {% endfor %}</textarea>
+        <textarea class="form-control button-font" id="directionstextarea" name="directions" rows="5">{% for direction in recipe.directions %}{{direction}}; {% endfor %}</textarea>
         
     </div>
 
     <h5>Cuisine</h5> 
-    <select name="cuisine" id="cuisine" multiple>
+    <select name="cuisine" id="cuisine" class="button-font" multiple>
         {% if 'chinese' in recipe.cuisine %}
             <option value="chinese" selected>Chinese</option>
         {% else %}
@@ -52,7 +52,7 @@
     <br> 
     <br>
     <h5>Meal Type</h5>
-    <select id="meal_type" name="meal_type">
+    <select id="meal_type" name="meal_type" class="button-font">
         {% if recipe.meal_type == 'breakfast' %}
             <option value="breakfast" selected>Breakfast</option> 
         {% else %}
@@ -85,7 +85,7 @@
         <label class="form-label"><h5>YouTube Video URL</h5></label>
         <h6>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function, e.g. 
             <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></h6>
-        <input type="text" class="form-control" name="media" value="{{recipe.media}}" 
+        <input type="text" class="form-control button-font" name="media" value="{{recipe.media}}" 
         pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"/>
     </div>
     <br>
@@ -99,7 +99,7 @@
         <a id="upload_widget" class="cloudinary-button button-font">Upload Different Image</a>
         <input type="hidden" id="uploaded_file_url" name="uploaded_file_url"/>
         <br/>
-        <p id="uploaded_file_display" style="display:none">Uploaded File Name:<span id="uploaded_file_name"></span></p>
+        <p id="uploaded_file_display" class="button-font" style="display:none">Uploaded File Name:<span id="uploaded_file_name"></span></p>
     </div>       
     
     <div id="previewImg_div"></div>
@@ -108,11 +108,11 @@
     <div>
         <h5>Contributor Info</h5>
         <label class="form-label"><h6>Contributor Name</h6></label>
-        <input type="text" class="form-control" name="contributor" value="{{recipe.contributor}}"/>
+        <input type="text" class="form-control button-font" name="contributor" value="{{recipe.contributor}}"/>
     </div>
     <div>
         <label class="form-label"><h6>Contributor Email</h6></label>
-        <input type="text" class="form-control" name="email" value="{{recipe.email}}"/>
+        <input type="text" class="form-control button-font" name="email" value="{{recipe.email}}"/>
     </div>
     <h6><i>This information will not be displayed with the recipe.</i></h6>
     <br>
