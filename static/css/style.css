@@ -24,5 +24,18 @@
 .overall-display {
     margin-top: 30px;
     margin-bottom: 30px;
-    color: yellow;
+}
+
+.page-footer {
+    background-color: rgba(191, 36, 49, 1); 
+    margin-top: 50px; 
+    color: white;
+}
+
+.list-unstyled li a {
+    color: white;
+}
+
+.footer-copyright a{
+    color: white;
 }
