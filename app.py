@@ -126,7 +126,7 @@ def edit_recipe(recipe_id):
     recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
     })
-    return render_template('edit_recipe.template.html', recipe=recipe)
+    return render_template('edit_recipe.template.html', recipe=recipe, cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 
 @app.route('/recipes/edit/<recipe_id>', methods=['POST'])

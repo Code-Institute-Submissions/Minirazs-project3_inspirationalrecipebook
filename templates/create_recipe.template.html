@@ -53,10 +53,8 @@
         <input type="text" class="form-control" name="media"/>
     </div>
     <br>
-    <br>
-
     <div>
-        <label><h5>Image</h5></label>
+        <label><h5>Recipe Image</h5></label>
     </div>
     <div>
         <a id="upload_widget" class="cloudinary-button">Upload image</a>
@@ -66,7 +64,7 @@
     </div>       
     
     <div id="previewImg_div"></div>
-    
+    <br>
     <br>
     <div>
         <h5>Contributor Info</h5>
@@ -77,7 +75,7 @@
         <label class="form-label">Contributor Email </label>
         <input type="text" class="form-control" name="email"/>
     </div>
-    <p>This information will not be displayed with the recipe.</p>
+    <p><i>This information will not be displayed with the recipe.</i></p>
     <br>
     <input type="submit" class="btn btn-primary"/>
 </form>
@@ -86,8 +84,9 @@
     
 <script type="text/javascript">  
     var myWidget = cloudinary.createUploadWidget({
-    cloudName: "{{cloudName}}", 
-        uploadPreset: "{{uploadPreset}}"}, (error, result) => { 
+        cloudName: "{{cloudName}}", 
+        uploadPreset: "{{uploadPreset}}"}, 
+        (error, result) => { 
             if (!error && result && result.event === "success") { 
                 console.log('Done! Here is the image info: ', result.info); 
                 let fileURL = document.querySelector('#uploaded_file_url');
