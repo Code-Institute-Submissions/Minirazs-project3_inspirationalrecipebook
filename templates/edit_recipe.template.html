@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         <label for="descriptiontextarea">Description</label>
-        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" value="{{recipe.description}}"></textarea>
+        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" value="{{recipe.description}}">{{recipe.description}}</textarea>
     </div>
     <div>
         <label class="form-label">Servings</label>
@@ -78,7 +78,8 @@
     <br>
 
     <div>
-        <label class="form-label">Video URL</label>
+        <label class="form-label">YouTube Video URL</label>
+        <p>Paste the Embedded Youtube Link, e.g. https://www.youtube.com/embed/MO_Nh6Fc_0E</p>
         <input type="text" class="form-control" name="media" value="{{recipe.media}}"/>
     </div>
 

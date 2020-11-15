@@ -2,7 +2,16 @@
 
 {%block content %}
 {{recipe}}
-    <h3>{{recipe.name}}</h3>
+    <h1>{{recipe.name}}</h1>
+    {% if recipe.contributor == "Chef & Grandson" %}
+    <h5>By Chef & Grandson</h5>
+    {% endif %}
+
+    <p>{{recipe.description}}</p>
+
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{recipe.media}}"></iframe>   
+    </div>
 
     <h3>Ingredients</h3>
     {% for ingredient in recipe.ingredients %}
