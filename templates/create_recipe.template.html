@@ -5,28 +5,28 @@
     <br>
     <div>
         <label class="form-label"><h5>Recipe Name</h5></label>
-        <input type="text" class="form-control" name="recipe_name"/>
+        <input type="text" class="form-control" name="recipe_name" required/>
     </div>
     <br>
     <div class="form-group">
         <label for="descriptiontextarea"><h5>Description</h5></label>
-        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3"></textarea>
+        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" required></textarea>
     </div>
     <div>
         <label class="form-label"><h5>Servings</h5></label>
-        <input type="number" class="form-control" name="servings"/>
+        <input type="number" class="form-control" name="servings" required/>
     </div>
     <br>
     <div class="form-group">
         <label for="ingredientstextarea"><h5>Ingredients</h5></label>
         <h6>Put a semicolon ';' after each measured ingredient, for e.g. 1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato</h6>
-        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="5" placeholder="1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato"></textarea>
+        <textarea class="form-control" id="ingredientstextarea" name="ingredients" rows="5" placeholder="1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato" required></textarea>
     </div>
 
     <div class="form-group">
         <label for="directionstextarea"><h5>Directions</h5></label>
         <h6>Put a semicolon ';' after each step, for e.g. Cut into slices; Soak in water for 10 minutes; Preheat oven</h6>
-        <textarea class="form-control" id="directionstextarea" name="directions" rows="5" placeholder="Cut into slices; Soak in water for 10 minutes; Preheat oven"></textarea>
+        <textarea class="form-control" id="directionstextarea" name="directions" rows="5" placeholder="Cut into slices; Soak in water for 10 minutes; Preheat oven" required></textarea>
     </div>
 
     <h5>Cuisine</h5>
@@ -61,7 +61,7 @@
     </div>
     <div>
         <a id="upload_widget" class="cloudinary-button">Upload image</a>
-        <input type="hidden" id="uploaded_file_url" name="uploaded_file_url"/>
+        <input type="hidden" id="uploaded_file_url" name="uploaded_file_url" required/>
         <br/>
         <p id="uploaded_file_display" style="display:none">Uploaded File Name:<span id="uploaded_file_name"></span></p>
     </div>       
@@ -72,11 +72,11 @@
     <div>
         <h5>Contributor Info</h5>
         <label class="form-label">Contributor Name</label>
-        <input type="text" class="form-control" name="contributor"/>
+        <input type="text" class="form-control" name="contributor" required/>
     </div>
     <div>
         <label class="form-label">Contributor Email </label>
-        <input type="text" class="form-control" name="email"/>
+        <input type="text" class="form-control" name="email" required/>
     </div>
     <p><i>This information will not be displayed with the recipe.</i></p>
     <br>
