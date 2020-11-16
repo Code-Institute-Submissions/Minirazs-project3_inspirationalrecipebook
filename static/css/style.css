@@ -85,6 +85,10 @@ header .overlay {
     z-index: 1;
 }
 
+a {
+    color: rgba(191, 36, 49, 1); 
+}
+
 .index {
     display: inline-block;
     color: rgba(191, 36, 49, 1); 
@@ -106,12 +110,20 @@ header .overlay {
     display: flex;
     margin: 20px;
     font-family: sans-serif;
+    border: 1px solid rgba(191, 36, 49, 1); 
+}
+
+.card_image {
+
 }
 
 .thumbnail{
     /* position: absolute; */
-    max-height: 200px; 
-    object-fit: contain; 
+    height: 100%;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    /* object-fit: contain;  */
     overflow: hidden; 
     /* transform-origin: 50% 50%; 
     transition: .2s ease-in-out; */
