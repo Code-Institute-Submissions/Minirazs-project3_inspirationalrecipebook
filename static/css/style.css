@@ -89,6 +89,10 @@ a {
     color: rgba(191, 36, 49, 1); 
 }
 
+a:hover {
+    color: rgba(255, 166, 0, 1);
+}
+
 .index {
     display: inline-block;
     color: rgba(191, 36, 49, 1); 
@@ -97,6 +101,9 @@ a {
     width: 33px; 
 }
 
+.tip {
+    font-size: 16px;
+}
 
 #all_recipes {
     margin: auto;
@@ -137,6 +144,36 @@ a {
 .overall-display {
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+/* advanced search bar */
+.advanced_search {
+    text-align: center;
+}
+
+#advanced_search_btn {
+    width: 200px;
+    background-color: rgba(191, 36, 49, 1); 
+    border-color: rgba(191, 36, 49, 1); 
+}
+
+#advanced_search_btn :hover{
+    background-color:rgba(255, 166, 0, 1);
+    border-color: rgba(255, 166, 0, 1);
+}
+
+.advanced_fields {
+    margin-bottom: 20px;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#cuisine {
+    margin-top: 10px;
 }
 
 #description_display{

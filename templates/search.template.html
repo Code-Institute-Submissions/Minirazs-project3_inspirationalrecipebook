@@ -1,32 +1,35 @@
 <form method="POST">
-	<div class="row">
-		<div class="col">
-			<label>Recipe Name</label>
+	<div class="row advanced_search">
+		<div class="col-12 col-md-4 advanced_fields">
+			<label><h5>Recipe Name</h5></label>
 			<input type="text" class="form-control" name="name"/>
         </div>
+    
+        <div class="col-12 col-md-4 advanced_fields">
+            <h5>Cuisine</h5>
+            <span class="tip">Press SHIFT to select more options</span>
+            <br>
+            <select name="cuisine" id="cuisine" class="button-font" multiple>
+                <option value="">Any</option>
+                <option value="chinese">Chinese</option>
+                <option value="western">Western</option>
+                <option value="hainanese">Hainanese</option>
+            </select>
+        </div>
+
+        <div class="col-12 col-md-4 advanced_fields">
+            <h5>Meal Type</h5>
+            <select id="meal_type" name="meal_type" class="button-font">
+                <option value="">Any</option> 
+                <option value="breakfast">Breakfast</option> 
+                <option value="maincourse">Main Course</option> 
+                <option value="soup">Soup</option> 
+                <option value="dessert">Dessert</option> 
+                <option value="festive">Festive</option> 
+            </select>
+        </div>
     </div>
-    <div class="row">
-        <h5>Cuisine</h5>
-        <p>Please press SHIFT key to select multiple options</p>
-        <select name="cuisine" id="cuisine" multiple>
-            <option value="">Any</option>
-            <option value="chinese">Chinese</option>
-            <option value="western">Western</option>
-            <option value="hainanese">Hainanese</option>
-        </select>
-        <br> 
+    <div class="row centre">
+        <input type="submit" value="Search" id="advanced_search_btn" class="btn btn-primary mt-3 button-font"/>
     </div>
-    <div class="row">
-        <br>
-        <h5>Meal Type</h5>
-        <select id="meal_type" name="meal_type">
-            <option value="">Any</option> 
-            <option value="breakfast">Breakfast</option> 
-            <option value="maincourse">Main Course</option> 
-            <option value="soup">Soup</option> 
-            <option value="dessert">Dessert</option> 
-            <option value="festive">Festive</option> 
-        </select>
-    </div>
-    <input type="submit" value="Search" class="btn btn-primary mt-3 button-font"/>
 </form>
