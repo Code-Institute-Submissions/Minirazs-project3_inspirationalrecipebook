@@ -19,12 +19,12 @@
       <div class="overlay"></div>
       <!-- Banner Video -->
       <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="{{url_for('static', filename='static/img/cooksalmon.mp4')}}" type="video/mp4" title="Cook with us!">
+        <source src="{{url_for('static', filename='img/cooksalmon.mp4')}}" type="video/mp4" title="Cook with us!">
       </video>
       
       <!-- Navigation Bar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{url_for('show_recipes') }}">Chef & Grandson</a>
+        <a href="{{ url_for('show_recipes')}}" class="text-uppercase">Chef & Grandson</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,16 +32,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('show_recipes') }}">Recipes <span class="sr-only">(current)</span></a>
+              <a href="{{ url_for('show_recipes')}}" class="nav-link">Recipes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('show_create_recipes') }}">Share</a>
+              <a href="{{ url_for('show_create_recipes')}}" class="nav-link">Share</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#" class="nav-link">Contact</a>
             </li>
           </ul>
           <!-- Search bar in navbar -->
@@ -52,7 +52,7 @@
         </div>
       </nav>
       
-      <img id="logo" title="Subscribe to Chef & Grandson's YouTube channel!" src="{{url_for('static', filename='static/img/chefngrandson.png')}}" alt="Chef & Grandson logo"/>
+      <img id="logo" title="Subscribe to Chef & Grandson's YouTube channel!" src="{{url_for('static', filename='img/chefngrandson.png')}}" alt="Chef & Grandson logo"/>
 
         <!-- Youtube API - Subscribe button -->
       <div id='subscribe'>

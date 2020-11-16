@@ -12,7 +12,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .navbar {
+    position: relative;
     font-family: 'Thasadith', sans-serif;
+    z-index: 4;
 }
 
 .button-font {
@@ -82,7 +84,6 @@ header .overlay {
     opacity: 0.3;
     z-index: 1;
 }
-
 
 .index {
     display: inline-block;
