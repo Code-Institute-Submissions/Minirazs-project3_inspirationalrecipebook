@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Thasadith', sans-serif;
 }
 
+.navbar {
+    font-family: 'Thasadith', sans-serif;
+}
+
 .button-font {
     font-family: 'Thasadith', sans-serif;
 }
@@ -22,22 +26,24 @@ h1, h2, h3, h4, h5, h6{
 
 /* logo */
 #logo {
+    position: relative;
     width: 160px;
     display: block;
     margin: auto;
     margin-top: 3%;
+    z-index: 2;
 }
 
   /* youtube subscribe button on banner */
 #subscribe {
+    position: relative;
     text-align: center;
     margin-top: 3%;
     z-index: 3;
 }
 
-
-  /* Banner video*/
-  header {
+/* Banner video*/
+header {
     position: relative;
     background-color:white;
     height: 50vh;
