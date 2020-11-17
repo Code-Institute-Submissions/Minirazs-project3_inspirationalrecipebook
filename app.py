@@ -36,27 +36,65 @@ def home():
 
 # route to show all recipes
 
-
-@app.route('/recipes')
+@app.route('/recipe')
 def show_recipes():
     all_recipes = db.recipes.find()
     print(all_recipes)
     return render_template('all_recipes.template.html', all_recipes=all_recipes)
 
-# route to create recipe
 
+# @app.route('/recipe', methods=['GET', 'POST'])
+# def show_recipes():
+#     if request.method == 'GET':
+#         all_recipes = db.recipes.find()
+#         print(all_recipes)
+#         return render_template('all_recipes.template.html', all_recipes=all_recipes)
+    
+#     if request.method == 'POST':
+#         name = request.form.get('name')
+#         cuisine = request.form.getlist('cuisine')
+#         meal_type = request.form.get('meal_type')
+
+#         critera = {}
+
+#         if name:
+#             critera['name'] = {
+#                 '$regex': name,
+#                 '$options': 'i'  # i means 'case-insensitive'
+#             }
+
+#         if len(cuisine) > 0 and cuisine[0] != "":
+#             critera['cuisine'] = {
+#                 '$in': cuisine
+#             }
+
+#         print(cuisine)
+
+#         if meal_type:
+#             critera['meal_type'] = {
+#                 '$regex': meal_type,
+#                 '$options': 'i'  # i means 'case-insensitive'
+#             }
+
+#         print(critera)
+
+#         results = db.recipes.find(critera)
+#         return render_template('display_results.template.html',
+#                             all_recipes=results,
+#                             name=name)
+
+
+# for testing cloudinary image upload widget
 @app.route('/recipes/uploadimage')
 def upload_image():
     return render_template('uploadimage.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
-
+# route to create recipe
 @app.route('/recipes/create')
 def show_create_recipes():
     return render_template('create_recipe.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
-# route to process recipe form
-
-
+# route to process recipe form  
 @app.route('/recipes/create', methods=['POST'])
 def process_create_recipes():
     name = request.form.get('recipe_name')
