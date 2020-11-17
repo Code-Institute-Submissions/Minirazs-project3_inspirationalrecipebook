@@ -67,7 +67,7 @@ def show_recipes():
                 '$in': cuisine
             }
 
-        print(cuisine)
+        print(cuisine[0])
 
         if meal_type:
             critera['meal_type'] = {
@@ -80,7 +80,7 @@ def show_recipes():
         results = db.recipes.find(critera)
         return render_template('display_results.template.html',
                             all_recipes=results,
-                            name=name)
+                            name=name, cuisine=cuisine[0], meal_type=meal_type)
 
 
 # for testing cloudinary image upload widget
