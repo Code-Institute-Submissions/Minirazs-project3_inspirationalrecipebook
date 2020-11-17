@@ -1,3 +1,7 @@
+html{
+    font-size: 16px;
+}
+
 p {
     font-size: 20px;
     font-family: 'Thasadith', sans-serif;
@@ -256,7 +260,7 @@ ol li::before {
     border-radius: .5em;
 }
 
-/* social media icons */
+/* social media icons in About */
 .socialmedia {
     display: flex;
     justify-content: center;
@@ -270,6 +274,17 @@ ol li::before {
 }
 
 .icon:hover {
+    position: relative;
+    bottom: 2px;
+}
+
+/* social media icons in footer */
+.ficon {
+    width: 40px;
+    margin: 0 3rem;
+}
+
+.ficon:hover {
     position: relative;
     bottom: 2px;
 }
