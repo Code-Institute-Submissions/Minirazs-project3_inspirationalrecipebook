@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import os
 import pymongo
 import re
-import gallery
 # from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
@@ -290,6 +289,12 @@ def confirm_delete(recipe_id):
 
     return redirect(url_for('show_recipes'))
 
+
+# @app.route('/recipe')
+# def show_recipes():
+#     all_recipes = db.recipes.find()
+#     print(all_recipes)
+#     return render_template('all_recipes.template.html', all_recipes=all_recipes)
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
