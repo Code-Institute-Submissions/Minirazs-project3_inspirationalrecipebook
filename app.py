@@ -36,52 +36,51 @@ def home():
 
 # route to show all recipes
 
-@app.route('/recipe')
-def show_recipes():
-    all_recipes = db.recipes.find()
-    print(all_recipes)
-    return render_template('all_recipes.template.html', all_recipes=all_recipes)
-
-
-# @app.route('/recipe', methods=['GET', 'POST'])
+# @app.route('/recipe')
 # def show_recipes():
-#     if request.method == 'GET':
-#         all_recipes = db.recipes.find()
-#         print(all_recipes)
-#         return render_template('all_recipes.template.html', all_recipes=all_recipes)
+#     all_recipes = db.recipes.find()
+#     print(all_recipes)
+#     return render_template('all_recipes.template.html', all_recipes=all_recipes)
+
+@app.route('/recipe', methods=['GET', 'POST'])
+def show_recipes():
+    if request.method == 'GET':
+        all_recipes = db.recipes.find()
+        print(all_recipes)
+        return render_template('all_recipes.template.html', all_recipes=all_recipes)
     
-#     if request.method == 'POST':
-#         name = request.form.get('name')
-#         cuisine = request.form.getlist('cuisine')
-#         meal_type = request.form.get('meal_type')
+    if request.method == 'POST':
+        name = request.form.get('name')
+        cuisine = request.form.getlist('cuisine')
+        meal_type = request.form.get('meal_type')
 
-#         critera = {}
+        critera = {}
 
-#         if name:
-#             critera['name'] = {
-#                 '$regex': name,
-#                 '$options': 'i'  # i means 'case-insensitive'
-#             }
+        if name:
+            critera['name'] = {
+                '$regex': name,
+                '$options': 'i'  # i means 'case-insensitive'
+            }
 
-#         if len(cuisine) > 0 and cuisine[0] != "":
-#             critera['cuisine'] = {
-#                 '$in': cuisine
-#             }
+        if len(cuisine) > 0 and cuisine[0] != "":
+            critera['cuisine'] = {
+                '$in': cuisine
+            }
 
-#         print(cuisine)
+        print(cuisine)
 
-#         if meal_type:
-#             critera['meal_type'] = {
-#                 '$regex': meal_type,
-#                 '$options': 'i'  # i means 'case-insensitive'
-#             }
+        if meal_type:
+            critera['meal_type'] = {
+                '$regex': meal_type,
+                '$options': 'i'  # i means 'case-insensitive'
+            }
+        print(meal_type)
+        print(critera)
 
-#         print(critera)
-
-#         results = db.recipes.find(critera)
-#         return render_template('display_results.template.html',
-#                             all_recipes=results,
-#                             name=name)
+        results = db.recipes.find(critera)
+        return render_template('display_results.template.html',
+                            all_recipes=results,
+                            name=name)
 
 
 # for testing cloudinary image upload widget
