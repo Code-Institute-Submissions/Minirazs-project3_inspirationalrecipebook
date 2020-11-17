@@ -291,11 +291,9 @@ def confirm_delete(recipe_id):
     return redirect(url_for('show_recipes'))
 
 
-# @app.route('/recipe')
-# def show_recipes():
-#     all_recipes = db.recipes.find()
-#     print(all_recipes)
-#     return render_template('all_recipes.template.html', all_recipes=all_recipes)
+@app.route('/about')
+def show_about():
+    return render_template('about.template.html')
 
 # "magic code" -- boilerplate
 # if __name__ == '__main__':

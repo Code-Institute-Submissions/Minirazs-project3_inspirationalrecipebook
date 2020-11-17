@@ -256,6 +256,24 @@ ol li::before {
     border-radius: .5em;
 }
 
+/* social media icons */
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.icon {
+    width: 70px;
+    margin: 0 3rem;
+}
+
+.icon:hover {
+    position: relative;
+    bottom: 2px;
+}
+
 /* Select dropdown */
 .select-css {
 	display: block;

@@ -82,6 +82,7 @@
     <br>
     <br>
     <div>
+        <br>
         <label class="form-label"><h5>YouTube Video URL</h5></label>
         <h6>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function. Only URL that begins with <i>https://www.youtube.com/embed/</i> is accepted, e.g. 
             <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></h6>
@@ -119,7 +120,7 @@
     <br>
     <input type="submit" value="Submit" class="btn btn-success button button-font buttons"/>
 
-    <a href="{{ url_for('show_recipe', recipe_id=recipe._id ) }}" class="btn btn-primary button button-font">Back to this Recipe</a>
+    <a href="{{ url_for('show_recipe', recipe_id=recipe._id ) }}" class="btn btn-primary button button-font buttons">Back to this Recipe</a>
 </form>
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script> 
