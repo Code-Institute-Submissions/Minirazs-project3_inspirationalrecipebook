@@ -2,14 +2,12 @@
 	<div class="row advanced_search">
 		<div class="col-12 col-md-4 advanced_fields">
 			<label><h5>Recipe Name</h5></label>
-			<input type="text" class="form-control" name="name"/>
+			<input type="text" id="name_search" class="form-control" name="name"/>
         </div>
     
         <div class="col-12 col-md-4 advanced_fields">
-            <h5>Cuisine</h5>
-            <span class="tip">Press SHIFT to select more options</span>
-            <br>
-            <select name="cuisine" id="cuisine" class="button-font" multiple>
+            <label><h5>Cuisine</h5></label>
+            <select name="cuisine" class="select-css button-font">
                 <option value="">Any</option>
                 <option value="chinese">Chinese</option>
                 <option value="western">Western</option>
@@ -18,8 +16,8 @@
         </div>
 
         <div class="col-12 col-md-4 advanced_fields">
-            <h5>Meal Type</h5>
-            <select id="meal_type" name="meal_type" class="button-font">
+            <label><h5>Meal Type</h5></label>
+            <select name="meal_type" class="select-css button-font">
                 <option value="">Any</option> 
                 <option value="breakfast">Breakfast</option> 
                 <option value="maincourse">Main Course</option> 
