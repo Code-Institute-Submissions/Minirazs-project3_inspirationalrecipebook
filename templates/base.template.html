@@ -41,7 +41,7 @@
               <a href="{{ url_for('show_create_recipes')}}" class="nav-link">Share</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" class="nav-link">Contact</a>
+              <a class="nav-link" href="{{ url_for('show_contact')}}" class="nav-link">Contact</a>
             </li>
           </ul>
           <!-- Search bar in navbar -->
@@ -122,13 +122,13 @@
                   <a href="{{ url_for('show_recipes')}}" class="footer-links">Recipes</a>
                 </li>
                 <li>
-                  <a href="#!" class="footer-links">About</a>
+                  <a href="{{ url_for('show_about')}}" class="footer-links">About</a>
                 </li>
                 <li>
                   <a href="{{ url_for('show_create_recipes')}}" class="footer-links">Share</a>
                 </li>
                 <li>
-                  <a href="#!" class="footer-links">Contact</a>
+                  <a href="{{ url_for('show_contact')}}" class="footer-links">Contact</a>
                 </li>
               </ul>
             </div>
