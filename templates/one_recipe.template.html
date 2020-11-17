@@ -1,7 +1,11 @@
 {% extends 'base.template.html' %}
 
 {%block content %}
+{{recipe}}
 <div class="container">
+    <div class="row">
+        <a href="{{ url_for('show_recipes') }}"><i class='tip'>Home</i></a>
+    </div>
     <div class="row">
         <h1 class="cursive">{{recipe.name}}</h1>
     </div>
@@ -57,14 +61,17 @@
         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success button button-font buttons">Edit</a>
 
         <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger button button-font buttons">Delete</a> 
-        
-        <a href="{{ url_for('show_recipes')}}" class="btn btn-primary button button-font buttons">Return to Recipes</a> 
+
     </div>
     
     <div id="share_recipe">
         <h3>Share your recipe</h3>
 
         <p>Would you like to share your own recipe? <a href="{{ url_for('show_create_recipes') }}"><strong>Submit your recipe here.</strong></a></p>
+    </div>
+
+    <div class="row">
+        <a href="{{ url_for('show_recipes')}}" class="btn btn-primary button button-font buttons">Return to Home</a> 
     </div>
 </div>
 {%endblock%}

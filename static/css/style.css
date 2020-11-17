@@ -105,6 +105,10 @@ a:hover {
     color: white;
 }
 
+.cursive {
+    margin-top: 15px;
+}
+
 ol {
     max-width: 400px;
     counter-reset: my-awesome-counter;
@@ -126,8 +130,8 @@ ol li::before {
     font-size: 1.5rem;
     font-weight: bold;
     position: absolute;
-    --size: 32px;
-    left: calc(-1 * var(--size) - 15px);
+    --size: 28px;
+    left: calc(-1 * var(--size) - 20px);
     line-height: var(--size);
     width: var(--size);
     height: var(--size);
@@ -249,7 +253,7 @@ ol li::before {
 
 #share_recipe{
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #base-footer {
