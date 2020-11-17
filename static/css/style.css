@@ -278,17 +278,6 @@ ol li::before {
     bottom: 2px;
 }
 
-/* social media icons in footer */
-.ficon {
-    width: 40px;
-    margin: 0 3rem;
-}
-
-.ficon:hover {
-    position: relative;
-    bottom: 2px;
-}
-
 /* Select dropdown */
 .select-css {
 	display: block;
@@ -336,7 +325,6 @@ ol li::before {
     background-color: rgba(191, 36, 49, 1); 
     margin-top: 50px; 
     color: white;
-   
 }
 
 #subscribe {
@@ -350,4 +338,22 @@ ol li::before {
 
 .footer-links {
     color: white;
+}
+
+/* social media icons in footer */
+.ficon {
+    width: 40px;
+    margin: 0 3rem;
+}
+
+.ficon:hover {
+    position: relative;
+    bottom: 2px;
+}
+
+.fsocialmedia {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }

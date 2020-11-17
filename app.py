@@ -295,6 +295,10 @@ def confirm_delete(recipe_id):
 def show_about():
     return render_template('about.template.html')
 
+@app.route('/contact')
+def show_contact():
+    return render_template('contact.template.html')
+
 # "magic code" -- boilerplate
 # if __name__ == '__main__':
     # app.run(host=os.environ.get('IP'),     #must give a host (IP address)
