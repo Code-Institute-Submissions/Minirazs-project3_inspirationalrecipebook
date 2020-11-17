@@ -28,25 +28,30 @@
     <div class="row">
         <h4>For {{recipe.servings}} servings</h4>
     </div>
-    <div class="row">
-        <h3>Ingredients</h3>
+    <div class="row" id="one_recipe_display">
+        <div class="col-sm-6">
+            <h3>Ingredients</h3>
+            
+            <ul id="ingredients_display" class="list-unstyled">
+            {% for ingredient in recipe.ingredients %}
+                <li><span class='index text-space'>{{loop.index}}</span> {{ingredient}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-sm-6">
+            <h3> Directions</h3>
         
-        <ul id="ingredients_display" class="list-unstyled">
-        {% for ingredient in recipe.ingredients %}
-            <li><span class='index'>{{loop.index}}</span> {{ingredient}}</li>
-        {% endfor %}
-        </ul>
+            <ul id="directions_display" class="list-unstyled">
+            {% for direction in recipe.directions %}
+                <li><span class='index text-space'>{{loop.index}}</span> {{direction}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="w-100"></div>
     </div>
     
-    <div class="row">
-        <h3> Directions</h3>
-        
-        <ul id="directions_display" class="list-unstyled">
-        {% for direction in recipe.directions %}
-            <li><span class='index'>{{loop.index}}</span> {{direction}}</li>
-        {% endfor %}
-        </ul>
-    </div>
     <br>
     <div class="row">
 
@@ -54,8 +59,6 @@
 
         <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger button button-font">Delete</a> 
         
-
-
         <a href="{{ url_for('show_recipes')}}" class="btn btn-primary button button-font">Return to Recipes</a> 
     </div>
     

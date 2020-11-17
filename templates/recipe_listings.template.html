@@ -9,11 +9,11 @@
             </div>
             <div class="card-body">
             <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}" >
-                <h5 class="card-title">
+                <h5 class="card-title center_text">
                     {{ each_recipe.name }}
                 </h5>
             </a>
-                <h6 class="card-text">
+                <h6 class="card-text center_text">
                     {{ each_recipe.description| truncate(100) }}
                 </h6>
             </div>
