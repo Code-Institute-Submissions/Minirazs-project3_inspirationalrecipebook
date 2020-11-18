@@ -192,6 +192,7 @@ ol li::before {
     width: 200px;
     background-color: rgba(191, 36, 49, 1); 
     border-color: rgba(191, 36, 49, 1); 
+    colour: white;
 }
 
 .advanced_search_btn:hover{
