@@ -28,10 +28,6 @@ app.secret_key = os.environ.get('SECRET_KEY')
 CLOUD_NAME = os.environ.get('CLOUD_NAME')
 UPLOAD_PRESET = os.environ.get('UPLOAD_PRESET')
 
-# @app.route('/')
-# def home():
-#     return "It's working!"
-
 # route to show all recipes
 @app.route('/', methods=['GET', 'POST'])
 def show_recipes():
