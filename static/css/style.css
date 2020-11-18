@@ -243,11 +243,13 @@ ol li::before {
     width: 200px;
     background-color: rgba(191, 36, 49, 0.9); 
     border-color: rgba(191, 36, 49, 0.9); 
+    color: white;
 }
 
 .buttons:hover{
     background-color:rgba(255, 166, 0, 0.9);
     border-color: rgba(255, 166, 0, 0.9);
+    color: white;
 }
 
 #share_recipe{
