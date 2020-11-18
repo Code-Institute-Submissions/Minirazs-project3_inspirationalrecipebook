@@ -6,12 +6,12 @@
 		<div class="alert alert-danger">
 			<p>Are you sure you want to delete this recipe - {{recipe.name}}?</p>
             <div>
-                <label class="form-label">Type the original Contributor Email to confirm the deletion:</label>
+                <label class="form-label "><p>Type the original Contributor Email to confirm the deletion:</p></label>
                 <input type="text" class="form-control" name="email"/>
 
-                <input type="submit" value="Confirm" class="btn btn-danger button-font"/>
+                <input type="submit" value="Confirm" class="btn btn-danger button-font buttons"/>
 
-                <a href="{{url_for('show_recipes') }}" class="btn btn-success button-font">Cancel delete</a>
+                <a href="{{url_for('show_recipes') }}" class="btn btn-success button-font buttons">Cancel Delete</a>
             </div>
 		</div>
 	</form>

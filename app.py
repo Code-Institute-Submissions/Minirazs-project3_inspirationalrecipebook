@@ -77,6 +77,7 @@ def show_recipes():
         print(critera)
 
         results = db.recipes.find(critera)
+        print(results)
         return render_template('display_results.template.html',
                             all_recipes=results,
                             name=name, cuisine=cuisine[0], meal_type=meal_type)
