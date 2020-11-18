@@ -304,8 +304,8 @@ def show_contact():
 # if __name__ == '__main__':
     # app.run(host=os.environ.get('IP'),     #must give a host (IP address)
     #         port=int(os.environ.get('PORT')),   #networking clients access
-    #         debug=True)
+    #         debug=False)
 if __name__ == '__main__':
     app.run(host="localhost",  # must give a host (IP address)
             port=8080,  # networking clients access
-            debug=True)
+            debug=False)
