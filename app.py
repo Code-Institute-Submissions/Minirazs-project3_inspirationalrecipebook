@@ -300,7 +300,6 @@ def show_about():
 def show_contact():
     return render_template('contact.template.html')
 
-"magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),     #must give a host (IP address)
             port=int(os.environ.get('PORT')),   #networking clients access
