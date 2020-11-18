@@ -1,76 +1,102 @@
-{% extends 'base.template.html' %}
-
-{%block content %}
+{% extends 'base.template.html' %} {%block content %}
 <div class="container">
-    <div class="row">
-        <a href="{{ url_for('show_recipes') }}"><i class='tip'>Home</i></a>
-    </div>
-    <div class="row">
-        <h1 class="cursive">{{recipe.name}}</h1>
-    </div>
-    <div class="row">
-        {% if recipe.contributor == "Chef & Grandson" %}
-        <h5>By Chef & Grandson</h5>
-        {% endif %}
-    </div>
-    <div class="row" id="description_display">
-        <p>{{recipe.description}}</p>
-    </div>
-
-    {% if recipe.media != "" %}
-        <div class="row embed-responsive embed-responsive-16by9">     
-            <iframe class="embed-responsive-item" width="840" height="473" src="{{recipe.media}}" frameBorder="0" allowfullscreen></iframe>   
-        </div>
-    {% else %}
-        <div class="row">
-            <img src="{{recipe.image}}" style="width: 640px; height: 360px; object-fit: contain; overflow: hidden;" alt="{{recipe.name}}">
-        </div>
+  <div class="row">
+    <a href="{{ url_for('show_recipes') }}"><i class="tip">Home</i></a>
+  </div>
+  <div class="row">
+    <h1 class="cursive">{{recipe.name}}</h1>
+  </div>
+  <div class="row">
+    {% if recipe.contributor == "Chef & Grandson" %}
+    <h5>By Chef & Grandson</h5>
     {% endif %}
-    <br>
-    <div class="row">
-        <h4>For {{recipe.servings}} servings</h4>
-    </div>
-    <div class="row" id="one_recipe_display">
-        <div class="col-sm-6">
-            <h3>Ingredients</h3>
-            
-            <ol id="ingredients_display" type="1">
-            {% for ingredient in recipe.ingredients %}
-                <li>{{ingredient}}</li>
-            {% endfor %}
-            </ol>
-        </div>
+  </div>
+  <div class="row" id="description_display">
+    <p>{{recipe.description}}</p>
+  </div>
 
-        <div class="col-sm-6">
-            <h3> Directions</h3>
-        
-            <ol id="directions_display" type="1">
-            {% for direction in recipe.directions %}
-                <li>{{direction}}</li>
-            {% endfor %}
-            </ol>
-        </div>
+  {% if recipe.media != "" %}
+  <div class="row embed-responsive embed-responsive-16by9">
+    <iframe
+      class="embed-responsive-item"
+      width="840"
+      height="473"
+      src="{{recipe.media}}"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {% else %}
+  <div class="row">
+    <img
+      src="{{recipe.image}}"
+      style="width: 640px; height: 360px; object-fit: contain; overflow: hidden"
+      alt="{{recipe.name}}"
+    />
+  </div>
+  {% endif %}
+  <br />
+  <div class="row">
+    <h4>For {{recipe.servings}} servings</h4>
+  </div>
+  <div class="row" id="one_recipe_display">
+    <div class="col-sm-6">
+      <h3>Ingredients</h3>
 
-        <div class="w-100"></div>
-    </div>
-    
-    <br>
-    <div class="row">
-        {% if recipe.contributor != "Chef & Grandson" %}
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}" class="btn btn-success button button-font buttons">Edit</a>
-
-            <a href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}" class="btn btn-danger button button-font buttons">Delete</a> 
-        {% endif %}
-    </div>
-    
-    <div id="share_recipe">
-        <h3>Share your recipe</h3>
-
-        <p>Would you like to share your own recipe? <a href="{{ url_for('show_create_recipes') }}"><strong>Submit your recipe here.</strong></a></p>
+      <ol id="ingredients_display" type="1">
+        {% for ingredient in recipe.ingredients %}
+        <li>{{ingredient}}</li>
+        {% endfor %}
+      </ol>
     </div>
 
-    <div class="row">
-        <a href="{{ url_for('show_recipes')}}" class="btn button button-font buttons">Return to Home</a> 
+    <div class="col-sm-6">
+      <h3>Directions</h3>
+
+      <ol id="directions_display" type="1">
+        {% for direction in recipe.directions %}
+        <li>{{direction}}</li>
+        {% endfor %}
+      </ol>
     </div>
+
+    <div class="w-100"></div>
+  </div>
+
+  <br />
+  <div class="row">
+    {% if recipe.contributor != "Chef & Grandson" %}
+    <a
+      href="{{ url_for('edit_recipe', recipe_id=recipe._id ) }}"
+      class="btn btn-success button button-font buttons"
+      >Edit</a
+    >
+
+    <a
+      href="{{ url_for('show_confirm_delete', recipe_id=recipe._id)}}"
+      class="btn btn-danger button button-font buttons"
+      >Delete</a
+    >
+    {% endif %}
+  </div>
+
+  <div id="share_recipe">
+    <h3>Share your recipe</h3>
+
+    <p>
+      Would you like to share your own recipe?
+      <a href="{{ url_for('show_create_recipes') }}"
+        ><strong>Submit your recipe here.</strong></a
+      >
+    </p>
+  </div>
+
+  <div class="row">
+    <a
+      href="{{ url_for('show_recipes')}}"
+      class="btn button button-font buttons"
+      >Return to Home</a
+    >
+  </div>
 </div>
 {%endblock%}

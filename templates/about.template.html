@@ -1,45 +1,82 @@
-{% extends 'base.template.html' %}
-
-{%block content %}
+{% extends 'base.template.html' %} {%block content %}
 <!-- About us -->
-<section id ='about' class="col-12 col-md-12 col-lg-12">
-    <h2 class='title'>About Us</h2>
+<section id="about" class="col-12 col-md-12 col-lg-12">
+  <h2 class="title">About Us</h2>
 
-    <p>Welcome to the Chef and Grandson's website! Grandpa Chef hopes to pass on his culinary skills to his Grandson and inspire those who would like to learn and improve their cooking skills. He is a Hainanese and he enjoys sharing his unique cooking recipes on how to make easy yet delicious food dishes from his myriad experiences.</p>
+  <p>
+    Welcome to the Chef and Grandson's website! Grandpa Chef hopes to pass on
+    his culinary skills to his Grandson and inspire those who would like to
+    learn and improve their cooking skills. He is a Hainanese and he enjoys
+    sharing his unique cooking recipes on how to make easy yet delicious food
+    dishes from his myriad experiences.
+  </p>
 
-    <p>Being a food enthusiast, Grandpa Chef used to be a chef consultant for numerous restaurant chains. With disciples all over the world, he has chosen to retire two years ago to spend time with his beloved grandson. Though he has retired, he is still passionate about cooking and actively experimenting new recipes.</p>
+  <p>
+    Being a food enthusiast, Grandpa Chef used to be a chef consultant for
+    numerous restaurant chains. With disciples all over the world, he has chosen
+    to retire two years ago to spend time with his beloved grandson. Though he
+    has retired, he is still passionate about cooking and actively experimenting
+    new recipes.
+  </p>
 
-    <!-- Social media links -->
-    <div class='socialmedia'>
-        <a href="https://www.facebook.com/chefngrandson" title="Like us on Facebook!" target='_blank'><img class='icon' src='{{url_for('static', filename='img/fb_icon.png')}}' title="Like us on Facebook!" alt="Facebook: @chefngrandson"/></a>
-        <a href="https://www.youtube.com/c/ChefGrandson" title="Subscribe so you won't miss our new recipes!" target='_blank'><img class='icon' src='{{url_for('static', filename='img/yt_icon.png')}}' title="Subscribe so you won't miss our new recipes!" alt="Youtube channel id: UC5gmNs7t3Wmjs9nI8wc54-Q"/></a>
-        <a href="https://www.instagram.com/chefngrandson/" title="View our latest photos on Instagram!" target='_blank'><img class='icon' src='{{url_for('static', filename='img/ig_icon.png')}}' title="View our latest photos on Instagram!" alt="Instagram: chefngrandson"/></a>
-    </div>
+  <!-- Social media links -->
+  <div class="socialmedia">
+    <a
+      href="https://www.facebook.com/chefngrandson"
+      title="Like us on Facebook!"
+      target="_blank"
+      ><img class='icon' src='{{url_for('static', filename='img/fb_icon.png')}}'
+      title="Like us on Facebook!" alt="Facebook: @chefngrandson"/></a
+    >
+    <a
+      href="https://www.youtube.com/c/ChefGrandson"
+      title="Subscribe so you won't miss our new recipes!"
+      target="_blank"
+      ><img class='icon' src='{{url_for('static', filename='img/yt_icon.png')}}'
+      title="Subscribe so you won't miss our new recipes!" alt="Youtube channel
+      id: UC5gmNs7t3Wmjs9nI8wc54-Q"/></a
+    >
+    <a
+      href="https://www.instagram.com/chefngrandson/"
+      title="View our latest photos on Instagram!"
+      target="_blank"
+      ><img class='icon' src='{{url_for('static', filename='img/ig_icon.png')}}'
+      title="View our latest photos on Instagram!" alt="Instagram:
+      chefngrandson"/></a
+    >
+  </div>
 </section>
 
 <!-- Instagram feed -->
-<section id='instagram'>
-    <h2 class='title'></h2>
-    <div class="col-12 col-md-12 col-lg-12">
-        <div id="curator-feed-default-feed-layout">
-            <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">
-                Powered by Curator.io
-            </a>
-        </div>
+<section id="instagram">
+  <h2 class="title"></h2>
+  <div class="col-12 col-md-12 col-lg-12">
+    <div id="curator-feed-default-feed-layout">
+      <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">
+        Powered by Curator.io
+      </a>
     </div>
+  </div>
 </section>
 
 <script>
-    /* curator-feed-default-feed-layout */
-    newFunction();
+  /* curator-feed-default-feed-layout */
+  newFunction();
 
-    function newFunction() {
+  function newFunction() {
     (function () {
-        var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1;
-        i.src = "https://cdn.curator.io/published/ecf43557-6c9c-4f9d-b55b-a820a043eff0.js";
-        e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
+      var i,
+        e,
+        d = document,
+        s = "script";
+      i = d.createElement("script");
+      i.async = 1;
+      i.src =
+        "https://cdn.curator.io/published/ecf43557-6c9c-4f9d-b55b-a820a043eff0.js";
+      e = d.getElementsByTagName(s)[0];
+      e.parentNode.insertBefore(i, e);
     })();
-    }
+  }
 </script>
 
 {%endblock%}

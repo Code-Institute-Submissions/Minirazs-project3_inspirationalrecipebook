@@ -1,33 +1,37 @@
 <form method="POST">
-	<div class="row advanced_search">
-		<div class="col-12 col-md-4 advanced_fields">
-			<label><h5>Recipe Name</h5></label>
-			<input type="text" id="name_search" class="form-control" name="name"/>
-        </div>
-    
-        <div class="col-12 col-md-4 advanced_fields">
-            <label><h5>Cuisine</h5></label>
-            <select name="cuisine" class="select-css button-font">
-                <option value="">Any</option>
-                <option value="chinese">Chinese</option>
-                <option value="western">Western</option>
-                <option value="hainanese">Hainanese</option>
-            </select>
-        </div>
+  <div class="row advanced_search">
+    <div class="col-12 col-md-4 advanced_fields">
+      <label><h5>Recipe Name</h5></label>
+      <input type="text" id="name_search" class="form-control" name="name" />
+    </div>
 
-        <div class="col-12 col-md-4 advanced_fields">
-            <label><h5>Meal Type</h5></label>
-            <select name="meal_type" class="select-css button-font">
-                <option value="">Any</option> 
-                <option value="breakfast">Breakfast</option> 
-                <option value="maincourse">Main Course</option> 
-                <option value="soup">Soup</option> 
-                <option value="dessert">Dessert</option> 
-                <option value="festive">Festive</option> 
-            </select>
-        </div>
+    <div class="col-12 col-md-4 advanced_fields">
+      <label><h5>Cuisine</h5></label>
+      <select name="cuisine" class="select-css button-font">
+        <option value="">Any</option>
+        <option value="chinese">Chinese</option>
+        <option value="western">Western</option>
+        <option value="hainanese">Hainanese</option>
+      </select>
     </div>
-    <div class="row centre">
-        <input type="submit" value="Search" class="btn button-font advanced_search_btn buttons"/>
+
+    <div class="col-12 col-md-4 advanced_fields">
+      <label><h5>Meal Type</h5></label>
+      <select name="meal_type" class="select-css button-font">
+        <option value="">Any</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="maincourse">Main Course</option>
+        <option value="soup">Soup</option>
+        <option value="dessert">Dessert</option>
+        <option value="festive">Festive</option>
+      </select>
     </div>
+  </div>
+  <div class="row centre">
+    <input
+      type="submit"
+      value="Search"
+      class="btn button-font advanced_search_btn buttons"
+    />
+  </div>
 </form>

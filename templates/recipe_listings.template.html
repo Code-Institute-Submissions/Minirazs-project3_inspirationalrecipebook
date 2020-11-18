@@ -1,24 +1,24 @@
 <div id="all_recipes">
-    {%for each_recipe in all_recipes %}
-        <!-- image / Name / first 100 characters of description on the card -->
-        <div class="card" style="max-width: 320px; height: 350px; ">
-            <div class="card_image">
-                <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}" >
-                    <img src="{{ each_recipe.image }}" class="card-img-top thumbnail" alt="{{each_recipe.name}}">
-                </a>
-            </div>
-            <div class="card-body">
-            <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}" >
-                <h5 class="card-title center_text">
-                    {{ each_recipe.name }}
-                </h5>
-            </a>
-                <h6 class="card-text center_text">
-                    {{ each_recipe.description| truncate(100) }}
-                </h6>
-            </div>
-        </div>
-    {%endfor%}    
+  {%for each_recipe in all_recipes %}
+  <!-- image / Name / first 100 characters of description on the card -->
+  <div class="card" style="max-width: 320px; height: 350px">
+    <div class="card_image">
+      <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}">
+        <img
+          src="{{ each_recipe.image }}"
+          class="card-img-top thumbnail"
+          alt="{{each_recipe.name}}"
+        />
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="{{ url_for('show_recipe', recipe_id=each_recipe._id ) }}">
+        <h5 class="card-title center_text">{{ each_recipe.name }}</h5>
+      </a>
+      <h6 class="card-text center_text">
+        {{ each_recipe.description| truncate(100) }}
+      </h6>
+    </div>
+  </div>
+  {%endfor%}
 </div>
-
-            

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template
+from flask import request, redirect, url_for, flash
 import os
 import pymongo
 import re
@@ -28,14 +29,16 @@ app.secret_key = os.environ.get('SECRET_KEY')
 CLOUD_NAME = os.environ.get('CLOUD_NAME')
 UPLOAD_PRESET = os.environ.get('UPLOAD_PRESET')
 
+
 # route to show all recipes
 @app.route('/', methods=['GET', 'POST'])
 def show_recipes():
     if request.method == 'GET':
         all_recipes = db.recipes.find()
         print(all_recipes)
-        return render_template('all_recipes.template.html', all_recipes=all_recipes)
-    
+        return render_template('all_recipes.template.html',
+                               all_recipes=all_recipes)
+
     if request.method == 'POST':
         name = request.form.get('name')
         cuisine = request.form.getlist('cuisine')
@@ -67,21 +70,26 @@ def show_recipes():
         results = db.recipes.find(critera)
         print(results)
         return render_template('display_results.template.html',
-                            all_recipes=results,
-                            name=name, cuisine=cuisine[0], meal_type=meal_type)
+                               all_recipes=results,
+                               name=name, cuisine=cuisine[0],
+                               meal_type=meal_type)
 
 
 # for testing cloudinary image upload widget
 @app.route('/uploadimage')
 def upload_image():
-    return render_template('uploadimage.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
+    return render_template('uploadimage.template.html',
+                           cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 # route to create recipe
+
+
 @app.route('/create')
 def show_create_recipes():
-    return render_template('create_recipe.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
+    return render_template('create_recipe.template.html',
+                           cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
-# route to process recipe form  
+# route to process recipe form
 @app.route('/create', methods=['POST'])
 def process_create_recipes():
     name = request.form.get('recipe_name')
@@ -151,7 +159,9 @@ def edit_recipe(recipe_id):
     recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
     })
-    return render_template('edit_recipe.template.html', recipe=recipe, cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
+    return render_template('edit_recipe.template.html',
+                           recipe=recipe, cloudName=CLOUD_NAME,
+                           uploadPreset=UPLOAD_PRESET)
 
 
 @app.route('/edit/<recipe_id>', methods=['POST'])
@@ -275,7 +285,8 @@ def confirm_delete(recipe_id):
         flash("Recipe is successfully deleted", "success")
 
     else:
-        flash("You have typed the incorrect contributor email! Recipe cannot be deleted", "error")
+        flash("You have typed the incorrect contributor email!"
+              "Recipe cannot be deleted", "error")
 
     return redirect(url_for('show_recipes'))
 
@@ -284,16 +295,13 @@ def confirm_delete(recipe_id):
 def show_about():
     return render_template('about.template.html')
 
+
 @app.route('/contact')
 def show_contact():
     return render_template('contact.template.html')
 
+
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),     #must give a host (IP address)
-            port=int(os.environ.get('PORT')),   #networking clients access
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
             debug=False)
-            
-# if __name__ == '__main__':
-#     app.run(host="localhost",  # must give a host (IP address)
-#             port=8080,  # networking clients access
-#             debug=False)

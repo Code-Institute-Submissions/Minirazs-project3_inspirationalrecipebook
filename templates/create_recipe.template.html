@@ -1,121 +1,175 @@
-{% extends 'base.template.html' %}
-
-{%block content %}
+{% extends 'base.template.html' %} {%block content %}
 <form method="POST">
-    <br>
-    <div>
-        <label class="form-label"><h5>Recipe Name</h5></label>
-        <input type="text" class="form-control" name="recipe_name" required/>
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="descriptiontextarea"><h5>Description</h5></label>
-        <textarea class="form-control" id="descriptiontextarea" name="description" rows="3" required></textarea>
-    </div>
-    <div>
-        <label class="form-label"><h5>Servings</h5></label>
-        <input type="number" class="form-control" name="servings" required/>
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="ingredientstextarea"><h5>Ingredients</h5></label>
-        <h6>Put a semicolon ';' after each measured ingredient, for e.g. 1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato</h6>
-        <textarea class="form-control button-font" id="ingredientstextarea" name="ingredients" rows="5" placeholder="1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato" required></textarea>
-    </div>
+  <br />
+  <div>
+    <label class="form-label"><h5>Recipe Name</h5></label>
+    <input type="text" class="form-control" name="recipe_name" required />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="descriptiontextarea"><h5>Description</h5></label>
+    <textarea
+      class="form-control"
+      id="descriptiontextarea"
+      name="description"
+      rows="3"
+      required
+    ></textarea>
+  </div>
+  <div>
+    <label class="form-label"><h5>Servings</h5></label>
+    <input type="number" class="form-control" name="servings" required />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="ingredientstextarea"><h5>Ingredients</h5></label>
+    <h6>
+      Put a semicolon ';' after each measured ingredient, for e.g. 1 tbsp of
+      salt; 1 tsp soy sauce; 1 whole tomato
+    </h6>
+    <textarea
+      class="form-control button-font"
+      id="ingredientstextarea"
+      name="ingredients"
+      rows="5"
+      placeholder="1 tbsp of salt; 1 tsp soy sauce; 1 whole tomato"
+      required
+    ></textarea>
+  </div>
 
-    <div class="form-group">
-        <label for="directionstextarea"><h5>Directions</h5></label>
-        <h6>Put a semicolon ';' after each step, for e.g. Cut into slices; Soak in water for 10 minutes; Preheat oven</h6>
-        <textarea class="form-control button-font" id="directionstextarea" name="directions" rows="5" placeholder="Cut into slices; Soak in water for 10 minutes; Preheat oven" required></textarea>
-    </div>
+  <div class="form-group">
+    <label for="directionstextarea"><h5>Directions</h5></label>
+    <h6>
+      Put a semicolon ';' after each step, for e.g. Cut into slices; Soak in
+      water for 10 minutes; Preheat oven
+    </h6>
+    <textarea
+      class="form-control button-font"
+      id="directionstextarea"
+      name="directions"
+      rows="5"
+      placeholder="Cut into slices; Soak in water for 10 minutes; Preheat oven"
+      required
+    ></textarea>
+  </div>
 
-    <h5>Cuisine</h5>
-    <p>Press SHIFT key to select multiple options</p>
-    <select name="cuisine" id="cuisine" class="button-font" multiple>
-      <option value="chinese">Chinese</option>
-      <option value="western">Western</option>
-      <option value="hainanese">Hainanese</option>
-    </select>
-    <br> 
-    <br>
-    <h5>Meal Type</h5>
-    <select id="meal_type" class="button-font" name="meal_type">
-        <option value="breakfast">Breakfast</option> 
-        <option value="maincourse">Main Course</option> 
-        <option value="soup">Soup</option> 
-        <option value="dessert">Dessert</option> 
-        <option value="festive">Festive</option> 
-    </select>
-    <br>
-    <br>
-    <div>
-        <br>
-        <label class="form-label"><h5>YouTube Video URL</h5></label>
-        <p>Paste the <b>Embedded Youtube Link</b> found under Embed of the Share function. Only URL that begins with <i>https://www.youtube.com/embed/</i> is accepted, e.g. <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i></p>
+  <h5>Cuisine</h5>
+  <p>Press SHIFT key to select multiple options</p>
+  <select name="cuisine" id="cuisine" class="button-font" multiple>
+    <option value="chinese">Chinese</option>
+    <option value="western">Western</option>
+    <option value="hainanese">Hainanese</option>
+  </select>
+  <br />
+  <br />
+  <h5>Meal Type</h5>
+  <select id="meal_type" class="button-font" name="meal_type">
+    <option value="breakfast">Breakfast</option>
+    <option value="maincourse">Main Course</option>
+    <option value="soup">Soup</option>
+    <option value="dessert">Dessert</option>
+    <option value="festive">Festive</option>
+  </select>
+  <br />
+  <br />
+  <div>
+    <br />
+    <label class="form-label"><h5>YouTube Video URL</h5></label>
+    <p>
+      Paste the <b>Embedded Youtube Link</b> found under Embed of the Share
+      function. Only URL that begins with
+      <i>https://www.youtube.com/embed/</i> is accepted, e.g.
+      <i>https://www.youtube.com/embed/MO_Nh6Fc_0E</i>
+    </p>
 
-        <input type="text" class="form-control" name="media" pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"/>
-    </div>
-    <br>
-    <div>
-        <label><h5>Recipe Image</h5></label>
-        <p>Image is best displayed at width 640px and height 360 px (landscape format)</p>
-    </div>
-    <div>
-        <a id="upload_widget" class="btn button-font buttons">Upload image</a>
-        <input type="hidden" id="uploaded_file_url" name="uploaded_file_url" required/>
-        <br/>
-        <p id="uploaded_file_display" style="display:none">Uploaded File Name:<span id="uploaded_file_name"></span></p>
-    </div>       
-    
-    <div id="previewImg_div"></div>
-    <br>
-    <br>
-    <div>
-        <h5>Contributor Info</h5>
-        <label class="form-label">Contributor Name</label>
-        <input type="text" class="form-control" name="contributor" required/>
-    </div>
-    <div>
-        <label class="form-label">Contributor Email </label>
-        <input type="text" class="form-control" name="email" required/>
-    </div>
-    <p><i>This information will not be displayed with the recipe.</i></p>
-    <br>
-    <input type="submit" value="Submit" class="btn button-font buttons"/>
+    <input
+      type="text"
+      class="form-control"
+      name="media"
+      pattern="^(https:\/\/)(www\.)(youtube\.com)(\/(embed\/))([\w\-]+)(\S+)?$"
+    />
+  </div>
+  <br />
+  <div>
+    <label><h5>Recipe Image</h5></label>
+    <p>
+      Image is best displayed at width 640px and height 360 px (landscape
+      format)
+    </p>
+  </div>
+  <div>
+    <a id="upload_widget" class="btn button-font buttons">Upload image</a>
+    <input
+      type="hidden"
+      id="uploaded_file_url"
+      name="uploaded_file_url"
+      required
+    />
+    <br />
+    <p id="uploaded_file_display" style="display: none">
+      Uploaded File Name:<span id="uploaded_file_name"></span>
+    </p>
+  </div>
+
+  <div id="previewImg_div"></div>
+  <br />
+  <br />
+  <div>
+    <h5>Contributor Info</h5>
+    <label class="form-label">Contributor Name</label>
+    <input type="text" class="form-control" name="contributor" required />
+  </div>
+  <div>
+    <label class="form-label">Contributor Email </label>
+    <input type="text" class="form-control" name="email" required />
+  </div>
+  <p><i>This information will not be displayed with the recipe.</i></p>
+  <br />
+  <input type="submit" value="Submit" class="btn button-font buttons" />
 </form>
 
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script> 
-    
-<script type="text/javascript">  
-    var myWidget = cloudinary.createUploadWidget({
-        cloudName: "{{cloudName}}", 
-        uploadPreset: "{{uploadPreset}}", 
-        cropping: true},
-        (error, result) => { 
-            if (!error && result && result.event === "success") { 
-                console.log('Done! Here is the image info: ', result.info); 
-                let fileURL = document.querySelector('#uploaded_file_url');
-                fileURL.value = result.info.url;
+<script
+  src="https://widget.cloudinary.com/v2.0/global/all.js"
+  type="text/javascript"
+></script>
 
-                // To show a preview of the image which is going to be uploaded 
-                $('#previewImg_div').append(`<img src="${result.info.thumbnail_url}"/><br>`);
+<script type="text/javascript">
+  var myWidget = cloudinary.createUploadWidget(
+    {
+      cloudName: "{{cloudName}}",
+      uploadPreset: "{{uploadPreset}}",
+      cropping: true,
+    },
+    (error, result) => {
+      if (!error && result && result.event === "success") {
+        console.log("Done! Here is the image info: ", result.info);
+        let fileURL = document.querySelector("#uploaded_file_url");
+        fileURL.value = result.info.url;
 
-                let filenameDisplay = document.querySelector('#uploaded_file_display');
+        // To show a preview of the image which is going to be uploaded
+        $("#previewImg_div").append(
+          `<img src="${result.info.thumbnail_url}"/><br>`
+        );
 
-                // make it appear (by setting it to display: block)
-                filenameDisplay.style.display = 'block';
+        let filenameDisplay = document.querySelector("#uploaded_file_display");
 
-                // fill in the file name
-                let filenameDisplaySpan = document.querySelector("#uploaded_file_name");
-                filenameDisplaySpan.innerText = result.info.original_filename;
-            }
-        }
-    )
-    
-    document.getElementById("upload_widget").addEventListener("click", function(){
-        myWidget.open();
-    }, false);
+        // make it appear (by setting it to display: block)
+        filenameDisplay.style.display = "block";
+
+        // fill in the file name
+        let filenameDisplaySpan = document.querySelector("#uploaded_file_name");
+        filenameDisplaySpan.innerText = result.info.original_filename;
+      }
+    }
+  );
+
+  document.getElementById("upload_widget").addEventListener(
+    "click",
+    function () {
+      myWidget.open();
+    },
+    false
+  );
 </script>
-
 
 {%endblock%}

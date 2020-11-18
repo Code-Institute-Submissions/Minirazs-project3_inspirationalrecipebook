@@ -1,361 +1,365 @@
-html{
-    font-size: 16px;
+html {
+  font-size: 16px;
 }
 
 p {
-    font-size: 20px;
-    font-family: 'Thasadith', sans-serif;
+  font-size: 20px;
+  font-family: "Thasadith", sans-serif;
 }
 
 /* h1 {
     font-family: 'Charmonman', cursive; 
 } */
 
-h1, h2, h3, h4, h5, h6{
-    font-family: 'Thasadith', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Thasadith", sans-serif;
 }
 
 .navbar {
-    position: relative;
-    font-family: 'Thasadith', sans-serif;
-    z-index: 4;
-    background-color: rgba(255,255,255,0.85);
+  position: relative;
+  font-family: "Thasadith", sans-serif;
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 /* Font for all buttons, form entries, messages etc */
 .button-font {
-    font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
 }
 
 .nav-item {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 /* logo */
 #logo {
-    position: relative;
-    width: 160px;
-    display: block;
-    margin: auto;
-    margin-top: 3%;
-    z-index: 2;
+  position: relative;
+  width: 160px;
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  z-index: 2;
 }
 
-  /* youtube subscribe button on banner */
+/* youtube subscribe button on banner */
 #subscribe {
-    position: relative;
-    text-align: center;
-    margin-top: 3%;
-    z-index: 3;
+  position: relative;
+  text-align: center;
+  margin-top: 3%;
+  z-index: 3;
 }
 
 /* Banner video*/
 header {
-    position: relative;
-    background-color:white;
-    height: 50vh;
-    min-height: 24rem;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  background-color: white;
+  height: 50vh;
+  min-height: 24rem;
+  width: 100%;
+  overflow: hidden;
 }
-  
+
 header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
-  
+
 header .container {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
-  
+
 header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    opacity: 0.3;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: 0.3;
+  z-index: 1;
 }
 
 a {
-    color: rgba(191, 36, 49, 1); 
+  color: rgba(191, 36, 49, 1);
 }
 
 a:hover {
-    color: rgba(255, 166, 0, 1);
+  color: rgba(255, 166, 0, 1);
 }
 
 #nav_search_btn {
-    color: rgba(191, 36, 49, 1); 
-    border-color: rgba(191, 36, 49, 1); 
+  color: rgba(191, 36, 49, 1);
+  border-color: rgba(191, 36, 49, 1);
 }
 
 #nav_search_btn:hover {
-    background-color: rgba(255, 166, 0, 1);
-    border-color: rgba(255, 166, 0, 1);
-    color: white;
+  background-color: rgba(255, 166, 0, 1);
+  border-color: rgba(255, 166, 0, 1);
+  color: white;
 }
 
 .cursive {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 ol {
-    max-width: 400px;
-    counter-reset: my-awesome-counter;
-    list-style: none;
-    padding-left: 40px;
-    line-height: 1.5;
-    font-family: 'Thasadith', sans-serif;
+  max-width: 400px;
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+  line-height: 1.5;
+  font-family: "Thasadith", sans-serif;
 }
 
 ol li {
-    margin: 0 0 0.5rem 0;
-    counter-increment: my-awesome-counter;
-    position: relative;
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
 }
 
 ol li::before {
-    content: counter(my-awesome-counter);
-    color: rgba(191, 36, 49, 1);
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: absolute;
-    --size: 28px;
-    left: calc(-1 * var(--size) - 20px);
-    line-height: var(--size);
-    width: var(--size);
-    height: var(--size);
-    top: 0;
-    transform: rotate(-10deg);
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 1px 1px 0 #999;
+  content: counter(my-awesome-counter);
+  color: rgba(191, 36, 49, 1);
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 28px;
+  left: calc(-1 * var(--size) - 20px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  transform: rotate(-10deg);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px 0 #999;
 }
 
 .tip {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 #all_recipes {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-    display: flex;
-    margin: 20px;
-    font-family: 'Thasadith', sans-serif;
-    border: 1px solid rgba(191, 36, 49, 1); 
+  display: flex;
+  margin: 20px;
+  font-family: "Thasadith", sans-serif;
+  border: 1px solid rgba(191, 36, 49, 1);
 }
 
 .center_text {
-    text-align: center;
+  text-align: center;
 }
 
-.thumbnail{
-    /* position: absolute; */
-    height: 100%;
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    overflow: hidden; 
+.thumbnail {
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .overall-display {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* advanced search bar */
 .advanced_search {
-    text-align: center;
+  text-align: center;
 }
 
 .advanced_search_btn {
-    width: 200px;
-    background-color: rgba(191, 36, 49, 1); 
-    border-color: rgba(191, 36, 49, 1);
+  width: 200px;
+  background-color: rgba(191, 36, 49, 1);
+  border-color: rgba(191, 36, 49, 1);
 }
 
-.advanced_search_btn:hover{
-    background-color:rgba(255, 166, 0, 1);
-    border-color: rgba(255, 166, 0, 1);
+.advanced_search_btn:hover {
+  background-color: rgba(255, 166, 0, 1);
+  border-color: rgba(255, 166, 0, 1);
 }
 
 .advanced_fields {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .centre {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .text-space {
-    margin-left: 15px;
-    margin-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-#description_display{
-    margin-top: 10px;
-    margin-bottom: 15px;
+#description_display {
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
-#one_recipe_display{
-    display: flex;
+#one_recipe_display {
+  display: flex;
 }
 
-#ingredients_display{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 18px;
+#ingredients_display {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
 }
 
-#directions_display{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 18px;
+#directions_display {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
 }
 
 .button {
-    margin: 15px;
+  margin: 15px;
 }
 
-.buttons{
-    width: 200px;
-    background-color: rgba(191, 36, 49, 0.9); 
-    border-color: rgba(191, 36, 49, 0.9); 
-    color: white;
+.buttons {
+  width: 200px;
+  background-color: rgba(191, 36, 49, 0.9);
+  border-color: rgba(191, 36, 49, 0.9);
+  color: white;
 }
 
-.buttons:hover{
-    background-color:rgba(255, 166, 0, 0.9);
-    border-color: rgba(255, 166, 0, 0.9);
-    color: white;
+.buttons:hover {
+  background-color: rgba(255, 166, 0, 0.9);
+  border-color: rgba(255, 166, 0, 0.9);
+  color: white;
 }
 
-#share_recipe{
-    margin-top: 40px;
-    margin-bottom: 40px;
+#share_recipe {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-#name_search{
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: .5em;
+#name_search {
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
 }
 
 /* social media icons in About */
 .socialmedia {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .icon {
-    width: 70px;
-    margin: 0 3rem;
+  width: 70px;
+  margin: 0 3rem;
 }
 
 .icon:hover {
-    position: relative;
-    bottom: 2px;
+  position: relative;
+  bottom: 2px;
 }
 
 /* Select dropdown */
 .select-css {
-	display: block;
-	font-size: 16px;
-	font-family: 'Thasadith', sans-serif;
-	font-weight: 700;
-	color: #444;
-	line-height: 1.3;
-	padding: .6em 1.4em .5em .8em;
-	width: 100%;
-	max-width: 100%;
-	box-sizing: border-box;
-	margin: 0;
-	border: 1px solid #aaa;
-	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-	border-radius: .5em;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	background-color: #fff;
-	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-	background-repeat: no-repeat, repeat;
-	background-position: right .7em top 50%, 0 0;
-	background-size: .65em auto, 100%;
+  display: block;
+  font-size: 16px;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 }
 .select-css::-ms-expand {
-	display: none;
+  display: none;
 }
 .select-css:hover {
-	border-color: #888;
+  border-color: #888;
 }
 .select-css:focus {
-	border-color: #aaa;
-	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-	box-shadow: 0 0 0 3px -moz-mac-focusring;
-	color: #222;
-	outline: none;
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
 }
 .select-css option {
-	font-weight:normal;
+  font-weight: normal;
 }
 
 /* Footer */
 #base-footer {
-    background-color: rgba(191, 36, 49, 1); 
-    margin-top: 50px; 
-    color: white;
+  background-color: rgba(191, 36, 49, 1);
+  margin-top: 50px;
+  color: white;
 }
 
 #subscribe {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-copyright {
-    font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
 }
 
 .footer-links {
-    color: white;
+  color: white;
 }
 
 /* social media icons in footer */
 .ficon {
-    width: 40px;
-    margin: 0 3rem;
+  width: 40px;
+  margin: 0 3rem;
 }
 
 .ficon:hover {
-    position: relative;
-    bottom: 2px;
+  position: relative;
+  bottom: 2px;
 }
 
 .fsocialmedia {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
