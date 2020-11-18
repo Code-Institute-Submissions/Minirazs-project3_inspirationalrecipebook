@@ -90,6 +90,8 @@ def show_create_recipes():
                            cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 # route to process recipe form
+
+
 @app.route('/create', methods=['POST'])
 def process_create_recipes():
     name = request.form.get('recipe_name')
