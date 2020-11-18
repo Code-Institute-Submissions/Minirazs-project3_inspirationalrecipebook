@@ -28,20 +28,12 @@ app.secret_key = os.environ.get('SECRET_KEY')
 CLOUD_NAME = os.environ.get('CLOUD_NAME')
 UPLOAD_PRESET = os.environ.get('UPLOAD_PRESET')
 
-
-@app.route('/')
-def home():
-    return "It's working!"
+# @app.route('/')
+# def home():
+#     return "It's working!"
 
 # route to show all recipes
-
-# @app.route('/recipe')
-# def show_recipes():
-#     all_recipes = db.recipes.find()
-#     print(all_recipes)
-#     return render_template('all_recipes.template.html', all_recipes=all_recipes)
-
-@app.route('/recipe', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def show_recipes():
     if request.method == 'GET':
         all_recipes = db.recipes.find()
@@ -84,17 +76,17 @@ def show_recipes():
 
 
 # for testing cloudinary image upload widget
-@app.route('/recipes/uploadimage')
+@app.route('/uploadimage')
 def upload_image():
     return render_template('uploadimage.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 # route to create recipe
-@app.route('/recipes/create')
+@app.route('/create')
 def show_create_recipes():
     return render_template('create_recipe.template.html', cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 # route to process recipe form  
-@app.route('/recipes/create', methods=['POST'])
+@app.route('/create', methods=['POST'])
 def process_create_recipes():
     name = request.form.get('recipe_name')
     description = request.form.get('description')
@@ -150,7 +142,7 @@ def process_create_recipes():
 # viewing 1 recipe
 
 
-@ app.route('/recipes/view/<recipe_id>')
+@ app.route('/view/<recipe_id>')
 def show_recipe(recipe_id):
     recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
@@ -158,7 +150,7 @@ def show_recipe(recipe_id):
     return render_template('one_recipe.template.html', recipe=recipe)
 
 
-@app.route('/recipes/edit/<recipe_id>')
+@app.route('/edit/<recipe_id>')
 def edit_recipe(recipe_id):
     recipe = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
@@ -166,7 +158,7 @@ def edit_recipe(recipe_id):
     return render_template('edit_recipe.template.html', recipe=recipe, cloudName=CLOUD_NAME, uploadPreset=UPLOAD_PRESET)
 
 
-@app.route('/recipes/edit/<recipe_id>', methods=['POST'])
+@app.route('/edit/<recipe_id>', methods=['POST'])
 def process_edit_recipes(recipe_id):
     name = request.form.get('recipe_name')
     description = request.form.get('description')
@@ -218,12 +210,12 @@ def process_edit_recipes(recipe_id):
     return redirect(url_for('show_recipe', recipe_id=recipe_id))
 
 
-@app.route('/recipes/search')
+@app.route('/search')
 def show_search_form():
     return render_template('search.template.html')
 
 
-@app.route('/recipes/search', methods=['POST'])
+@app.route('/search', methods=['POST'])
 def process_search_form():
     name = request.form.get('name')
     cuisine = request.form.get('cuisine')
@@ -259,7 +251,7 @@ def process_search_form():
                            name=name)
 
 
-@app.route('/recipes/delete/<recipe_id>')
+@app.route('/delete/<recipe_id>')
 def show_confirm_delete(recipe_id):
     # should use find_one, expecting one result
     recipe_to_delete = db.recipes.find_one({
@@ -269,7 +261,7 @@ def show_confirm_delete(recipe_id):
                            recipe=recipe_to_delete)
 
 
-@app.route('/recipes/delete/<recipe_id>', methods=["POST"])
+@app.route('/delete/<recipe_id>', methods=["POST"])
 def confirm_delete(recipe_id):
     email = request.form.get('email')
 
