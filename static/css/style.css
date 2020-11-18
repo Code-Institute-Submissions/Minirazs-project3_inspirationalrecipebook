@@ -183,10 +183,6 @@ ol li::before {
     margin-bottom: 30px;
 }
 
-.btn{
-    colour: white;
-}
-
 /* advanced search bar */
 .advanced_search {
     text-align: center;
