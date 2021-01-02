@@ -120,89 +120,54 @@ A sample Recipes document (show 1 recipe):
 ```
 {
 
-\_id: ObjectId(&quot;5f9e6b91d895188245e836be&quot;),
-
-name: &quot;Hainanese Chicken Rice&quot;,
-
-description: &quot;Hainanese Chicken Rice is an extremely mouthwatering dish with tender, succulent, boiled chicken drizzled with savoury sauces, served with fragrant chicken rice, and of course Hainanese chili sauce, dark soy sauce and ginger sauce.&quot;,
-
-servings: &quot;4&quot;,
-
+_id: ObjectId(“5f9e6b91d895188245e836be”),
+name: "Hainanese Chicken Rice",
+description: " Hainanese Chicken Rice is an extremely mouthwatering dish with tender, succulent, boiled chicken drizzled with savoury sauces, served with fragrant chicken rice, and of course Hainanese chili sauce, dark soy sauce and ginger sauce.”,
+servings: "4",
 ingredients: Array
-
-0 : &quot;1.8-2kg whole kampong chicken&quot;
-
-1 : &quot;7 garlic cloves, peeled and pound&quot;
-
-2 : &quot;3 pcs pandan leaves, tied and pound x2&quot;
-
-3 : &quot;7 slices of ginger&quot;
-
-4 : &quot;2 tsp salt to season chicken&quot;
-
-5 : &quot;Half tsp white pepper powder&quot;
-
-6 : &quot;550ml chicken stock, strained&quot;
-
-7 : &quot;500g rice&quot;
-
-8 : &quot;1 chicken cube&quot;
-
-9 : &quot;Half tsp salt to cook rice&quot;
-
-10 : &quot; Chicken Seasoning: 1 tbsp Sugar,1 tbsp Hot water,2 tbsp Sesame oil,2 tbsp Light soy sauce,Mix together&quot;,
+0 : "1.8-2kg whole kampong chicken"
+1 : "7 garlic cloves, peeled and pound"
+2 : "3 pcs pandan leaves, tied and pound x2"
+3 : "7 slices of ginger"
+4 : "2 tsp salt to season chicken"
+5 : "Half tsp white pepper powder"
+6 : "550ml chicken stock, strained"
+7 : "500g rice"
+8 : "1 chicken cube"
+9 : "Half tsp salt to cook rice"
+10 : "  Chicken Seasoning: 1 tbsp Sugar,1 tbsp Hot water,2 tbsp Sesame oil,2 tbsp Light soy sauce,Mix together”,
 
 directions: Array
-
-0: &quot;Pound the Ginger, Pandan Leaves&quot;
-
-1: &quot;Stuff garlic and ginger into the chicken&quot;
-
-2: &quot;Sprinkle salt&quot;
-
-3: &quot;Stuff pandan leaves, Salt, White Pepper&quot;
-
-4: &quot;Blanche the chicken in boiling water four times&quot;
-
-5: &quot;Add pandan leaves and ginger&quot;
-
-6: &quot;Cover and reduce to mid-low heat. Simmer for 30min.&quot;
-
-7: &quot;Take out the chicken and soak in cold water&quot;
-
-8: &quot;Once it is completely cooled, debone&quot;
-
-9: &quot;Pour chicken seasoning&quot;
-
-10: &quot;Add the bones back into the chicken stock. Simmer for another 30 mins&quot;
-
-11: &quot;Filter 550ml of chicken stock&quot;
-
-12: &quot;Pour the stock into rice cooker&quot;
-
-13: &quot;Add in ginger, garlic, pandan leaves and chicken cube&quot;
-
-14: &quot;Cook the rice&quot;
-
-15: &quot;Remove garlic, ginger &amp; leaves&quot;
-
-16 : &quot;Enjoy!&quot;,
+0: "Pound the Ginger, Pandan Leaves"
+1: "Stuff garlic and ginger into the chicken"
+2: "Sprinkle salt"
+3: "Stuff pandan leaves, Salt, White Pepper"
+4: "Blanche the chicken in boiling water four times"
+5: "Add pandan leaves and ginger"
+6: "Cover and reduce to mid-low heat. Simmer for 30min."
+7: "Take out the chicken and soak in cold water"
+8: "Once it is completely cooled, debone"
+9: "Pour chicken seasoning"
+10: "Add the bones back into the chicken stock. Simmer for another 30 mins"
+11: "Filter 550ml of chicken stock"
+12: "Pour the stock into rice cooker"
+13: "Add in ginger, garlic, pandan leaves and chicken cube"
+14: "Cook the rice"
+15: "Remove garlic, ginger & leaves"
+16 : "Enjoy!",
 
 Cuisine : Array
+0 : "chinese"
+1 : "hainanese",
 
-0 : &quot;chinese&quot;
+meal_type : "maincourse",
 
-1 : &quot;hainanese&quot;,
+media: https://www.youtube.com/embed/fTxrAdIyo88,
 
-meal\_type : &quot;maincourse&quot;,
+image: "http://res.cloudinary.com/minirazs/image/upload/v1605675692/chickenric...",
+contributor: "Chef & Grandson",
+email:"benfoojb@gmail.com",
 
-media: [https://www.youtube.com/embed/fTxrAdIyo88](https://www.youtube.com/embed/fTxrAdIyo88),
-
-image: &quot;http://res.cloudinary.com/minirazs/image/upload/v1605675692/chickenric...&quot;,
-
-contributor: &quot;Chef &amp; Grandson&quot;,
-
-email:&quot;benfoojb@gmail.com&quot;,
 
 }
 ```
