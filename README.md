@@ -118,7 +118,7 @@ The wireframe for the home page [can be found here](https://github.com/Minirazs/
 
 A sample Recipes document (show 1 recipe):
 
-{
+`{
 
 \_id: ObjectId(&quot;5f9e6b91d895188245e836be&quot;),
 
@@ -204,7 +204,7 @@ contributor: &quot;Chef &amp; Grandson&quot;,
 
 email:&quot;benfoojb@gmail.com&quot;,
 
-}
+}`
 
 For future development, 2 other collections – User and Reviews – can be created and implemented:
 
