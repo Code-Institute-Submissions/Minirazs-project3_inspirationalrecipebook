@@ -306,7 +306,7 @@ On Heroku website:
 
 ## Tools &amp; Tech used
 
-### Special thanks to the developers and tech creators for sharing freely their code and tools that are used in this site creation. 🤗🙌 They are listed in the Technologies section above.
+Special thanks to the developers and tech creators for sharing freely their code and tools that are used in this site creation. 🤗🙌 They are listed in the Technologies section above.
 
 ## Heroku Deployment steps
 
