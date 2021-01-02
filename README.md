@@ -20,7 +20,7 @@ Thasadith is a minimalistic, modern font that gives off a simple, clean feel.
 
 _Wireframe_
 
-The wireframe for the home page can be found here. The overall idea is to make the web application user-friendly and intuitive to navigate:
+The wireframe for the home page [can be found here](https://github.com/Minirazs/project3_inspirationalrecipebook/blob/master/static/wireframe/wireframe_home.jpg). The overall idea is to make the web application user-friendly and intuitive to navigate:
 
 1. Navbar on top with all the links to all the pages, a simplified search bar on it
 2. The middle section of the site has a plain white background starting with advanced search criteria (there&#39;re three criteria) and to display the search results prominently.
