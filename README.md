@@ -288,13 +288,13 @@ The site is automatically updated when new commits are pushed to the master bran
 **Deployment to Heroku via GitPod:**
 
 1. Log into Heroku by typing into the bash terminal: heroku login -i
-2. Create a new heroku app: heroku create \&lt;app-name\&gt;
+2. Create a new heroku app: heroku create <app-name>
 3. Check correct remotes added: git remote -v
 4. Install gunicorn: pip3 install gunicorn
 5. Create a name file named &quot; **P** rocfile&quot; in the same directory as app.py
-6. Enter: web gunicorn \&lt;your python file name without .py\&gt;:app
-7. Create requirements file: pip3 freeze --local \&gt; requirements.txt
-8. Using bash, commit all new changes to GitHub: git add . then git commit -m &quot;\&lt;message\&gt;&quot; then git push
+6. Enter: web gunicorn your python file name without '.py'
+7. Create requirements file: pip3 freeze --local requirements.txt
+8. Using bash, commit all new changes to GitHub: git add . then git commit -m "message", and then git push
 9. Push to Heroku: git push heroku master
 
 On Heroku website:
