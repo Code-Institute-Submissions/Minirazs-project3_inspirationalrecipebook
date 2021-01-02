@@ -1,6 +1,6 @@
 # Inspirational Recipe Book
 
-👩‍🍳👨‍🍳📚[Inspirational Recipe Book deployed on Heroku](https://inspirational-recipebook.herokuapp.com/recipe) is a further development of my previous front-end development project – [Chef &amp; Grandson](https://minirazs.github.io/project1_inspirationalpursuits/). Back-end development is done to make it a more robust data-centric web application.
+👩‍🍳👨‍🍳📚[Inspirational Recipe Book deployed on Heroku](https://inspirational-recipebook.herokuapp.com) is a further development of my previous front-end development project – [Chef &amp; Grandson](https://minirazs.github.io/project1_inspirationalpursuits/). Back-end development is done to make it a more robust data-centric web application.
 
 The aim of Inspirational Recipe Book is to promote the Chef &amp; Grandson YouTube channel, increase YouTube subscription and increase its respective recipe viewership and interactions with online users through recipe creation and links to social media accounts. Eventually, the site is meant to be developed to include user account logins and user reviews _(refer to features to be implemented section below)._
 
