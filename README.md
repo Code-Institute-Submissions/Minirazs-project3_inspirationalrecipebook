@@ -299,7 +299,7 @@ The site is automatically updated when new commits are pushed to the master bran
 
 On Heroku website:
 
-- Log into [Heroku](https://id.heroku.com/login) dashboard, go to settings and set environment variables for SECRET\_KEY = \&lt;your own key\&gt;, MONGO\_URI = \&lt;your MongoDB URI\&gt;
+- Log into [Heroku](https://id.heroku.com/login) dashboard, go to settings and set environment variables for SECRET\_KEY = your own key, MONGO\_URI = your MongoDB URI
 - Open App to view the web application!
 
 ## Credits
