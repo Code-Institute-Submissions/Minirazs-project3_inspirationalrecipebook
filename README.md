@@ -41,7 +41,7 @@ The wireframe for the home page can be found here. The overall idea is to make t
 - Navbar links to all pages on the site – Recipe (Home page), About, Share (Create Recipe) and Contact
 - The first simplified search bar on the navbar, &#39;_Search Recipe by name&#39;,_ by typing and submitting will display results from recipe name
 
-![](header.jpg)
+![](static/img/header.JPG)
 
 - In the middle section of the site, below the video banner, it&#39;s the advanced search bar with 3 criteria that can be chosen and entered. The search results will be based on 3 criteria combined.
 - Upon clicking on the image or name on the card (search display result), it will lead to the individual recipe page showing the recipe name, its description, its ingredients and measurements, its directions, video url input, image uploader widget and contributor information.
