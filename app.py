@@ -35,7 +35,7 @@ UPLOAD_PRESET = os.environ.get('UPLOAD_PRESET')
 def show_recipes():
     if request.method == 'GET':
         all_recipes = db.recipes.find()
-        print(all_recipes)
+
         return render_template('all_recipes.template.html',
                                all_recipes=all_recipes)
 
@@ -57,18 +57,16 @@ def show_recipes():
                 '$in': cuisine
             }
 
-        print(cuisine[0])
 
         if meal_type:
             critera['meal_type'] = {
                 '$regex': meal_type,
                 '$options': 'i'  # i means 'case-insensitive'
             }
-        print(meal_type)
-        print(critera)
+
 
         results = db.recipes.find(critera)
-        print(results)
+
         return render_template('display_results.template.html',
                                all_recipes=results,
                                name=name, cuisine=cuisine[0],
@@ -116,7 +114,6 @@ def process_create_recipes():
         if re.search('[a-zA-Z]', p):
             new_ingredients.append(p)
 
-    print(new_ingredients)
 
     pre_directions = directions.split(';')
     new_directions = []
@@ -124,7 +121,6 @@ def process_create_recipes():
         if re.search('[a-zA-Z]', d):
             new_directions.append(d)
 
-    print(new_directions)
 
     new_record = {
         'name': name,
@@ -141,7 +137,6 @@ def process_create_recipes():
     }
 
     result = db.recipes.insert_one(new_record)
-    print(result.inserted_id)
     flash("New recipe created successfully", "success")
     return redirect(url_for('show_recipe', recipe_id=result.inserted_id))
 
@@ -186,15 +181,11 @@ def process_edit_recipes(recipe_id):
         if re.search('[a-zA-Z]', p):
             new_ingredients.append(p)
 
-    print(new_ingredients)
-
     pre_directions = directions.split(';')
     new_directions = []
     for d in pre_directions:
         if re.search('[a-zA-Z]', d):
             new_directions.append(d)
-
-    print(new_directions)
 
     db.recipes.update_one({
         "_id": ObjectId(recipe_id)
@@ -243,15 +234,11 @@ def process_search_form():
             '$in': cuisine
         }
 
-    print(cuisine)
-
     if meal_type:
         critera['meal_type'] = {
             '$regex': meal_type,
             '$options': 'i'  # i means 'case-insensitive'
         }
-
-    print(critera)
 
     results = db.recipes.find(critera)
     return render_template('display_results.template.html',
@@ -276,9 +263,6 @@ def confirm_delete(recipe_id):
     recipe_to_delete = db.recipes.find_one({
         '_id': ObjectId(recipe_id)
     })
-
-    print(recipe_to_delete)
-    print(recipe_to_delete['email'])
 
     if email == recipe_to_delete['email']:
         db.recipes.remove({
