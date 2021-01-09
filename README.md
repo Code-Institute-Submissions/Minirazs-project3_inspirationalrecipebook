@@ -43,7 +43,7 @@ The wireframe for the home page [can be found here](https://github.com/Minirazs/
 
 ![](static/img/header.JPG)
 
-- In the middle section of the site, below the video banner, it&#39;s the advanced search bar with 3 criteria that can be chosen and entered. The search results will be based on 3 criteria combined.
+- In the middle section of the site, below the video banner, it starts with an introduction of the site and it&#39;s the advanced search bar with 3 criteria that can be chosen and entered. The search results will be based on 3 criteria combined.
 - Upon clicking on the image or name on the card (search display result), it will lead to the individual recipe page showing the recipe name, its description, its ingredients and measurements, its directions, video url input, image uploader widget and contributor information.
 - After creating the recipe, the user can choose to edit or delete the recipe. Deletion can only be processed if the user can correctly enter the contributor email that he or she has entered during recipe creation.
 - For Edit and Delete features of the recipes, by default if the recipes are by the Administrator (i.e. the Chef &amp; Grandson team), they cannot be edited or deleted.
@@ -120,54 +120,53 @@ A sample Recipes document (show 1 recipe):
 ```
 {
 
-_id: ObjectId(“5f9e6b91d895188245e836be”),
-name: "Hainanese Chicken Rice",
-description: " Hainanese Chicken Rice is an extremely mouthwatering dish with tender, succulent, boiled chicken drizzled with savoury sauces, served with fragrant chicken rice, and of course Hainanese chili sauce, dark soy sauce and ginger sauce.”,
-servings: "4",
-ingredients: Array
-0 : "1.8-2kg whole kampong chicken"
-1 : "7 garlic cloves, peeled and pound"
-2 : "3 pcs pandan leaves, tied and pound x2"
-3 : "7 slices of ginger"
-4 : "2 tsp salt to season chicken"
-5 : "Half tsp white pepper powder"
-6 : "550ml chicken stock, strained"
-7 : "500g rice"
-8 : "1 chicken cube"
-9 : "Half tsp salt to cook rice"
-10 : "  Chicken Seasoning: 1 tbsp Sugar,1 tbsp Hot water,2 tbsp Sesame oil,2 tbsp Light soy sauce,Mix together”,
+    _id: ObjectId(“5f9e6b91d895188245e836be”),
+    name: "Hainanese Chicken Rice",
+    description: " Hainanese Chicken Rice is an extremely mouthwatering dish with tender, succulent, boiled chicken drizzled with savoury sauces, served with fragrant chicken rice, and of course Hainanese chili sauce, dark soy sauce and ginger sauce.”,
+    servings: "4",
+    ingredients: Array
+    0 : "1.8-2kg whole kampong chicken"
+    1 : "7 garlic cloves, peeled and pound"
+    2 : "3 pcs pandan leaves, tied and pound x2"
+    3 : "7 slices of ginger"
+    4 : "2 tsp salt to season chicken"
+    5 : "Half tsp white pepper powder"
+    6 : "550ml chicken stock, strained"
+    7 : "500g rice"
+    8 : "1 chicken cube"
+    9 : "Half tsp salt to cook rice"
+    10 : "  Chicken Seasoning: 1 tbsp Sugar,1 tbsp Hot water,2 tbsp Sesame oil,2 tbsp Light soy sauce,Mix together”,
 
-directions: Array
-0: "Pound the Ginger, Pandan Leaves"
-1: "Stuff garlic and ginger into the chicken"
-2: "Sprinkle salt"
-3: "Stuff pandan leaves, Salt, White Pepper"
-4: "Blanche the chicken in boiling water four times"
-5: "Add pandan leaves and ginger"
-6: "Cover and reduce to mid-low heat. Simmer for 30min."
-7: "Take out the chicken and soak in cold water"
-8: "Once it is completely cooled, debone"
-9: "Pour chicken seasoning"
-10: "Add the bones back into the chicken stock. Simmer for another 30 mins"
-11: "Filter 550ml of chicken stock"
-12: "Pour the stock into rice cooker"
-13: "Add in ginger, garlic, pandan leaves and chicken cube"
-14: "Cook the rice"
-15: "Remove garlic, ginger & leaves"
-16 : "Enjoy!",
+    directions: Array
+    0: "Pound the Ginger, Pandan Leaves"
+    1: "Stuff garlic and ginger into the chicken"
+    2: "Sprinkle salt"
+    3: "Stuff pandan leaves, Salt, White Pepper"
+    4: "Blanche the chicken in boiling water four times"
+    5: "Add pandan leaves and ginger"
+    6: "Cover and reduce to mid-low heat. Simmer for 30min."
+    7: "Take out the chicken and soak in cold water"
+    8: "Once it is completely cooled, debone"
+    9: "Pour chicken seasoning"
+    10: "Add the bones back into the chicken stock. Simmer for another 30 mins"
+    11: "Filter 550ml of chicken stock"
+    12: "Pour the stock into rice cooker"
+    13: "Add in ginger, garlic, pandan leaves and chicken cube"
+    14: "Cook the rice"
+    15: "Remove garlic, ginger & leaves"
+    16 : "Enjoy!",
 
-Cuisine : Array
-0 : "chinese"
-1 : "hainanese",
+    Cuisine : Array
+    0 : "chinese"
+    1 : "hainanese",
 
-meal_type : "maincourse",
+    meal_type : "maincourse",
 
-media: https://www.youtube.com/embed/fTxrAdIyo88,
+    media: https://www.youtube.com/embed/fTxrAdIyo88,
 
-image: "http://res.cloudinary.com/minirazs/image/upload/v1605675692/chickenric...",
-contributor: "Chef & Grandson",
-email:"benfoojb@gmail.com",
-
+    image: "http://res.cloudinary.com/minirazs/image/upload/v1605675692/chickenric...",
+    contributor: "Chef & Grandson",
+    email:"happy@email.com",
 
 }
 ```
