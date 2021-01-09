@@ -44,6 +44,9 @@ The wireframe for the home page [can be found here](https://github.com/Minirazs/
 ![](static/img/header.JPG)
 
 - In the middle section of the site, below the video banner, it starts with an introduction of the site and it&#39;s the advanced search bar with 3 criteria that can be chosen and entered. The search results will be based on 3 criteria combined.
+
+![](static/img/advancedsearch.JPG)
+
 - Upon clicking on the image or name on the card (search display result), it will lead to the individual recipe page showing the recipe name, its description, its ingredients and measurements, its directions, video url input, image uploader widget and contributor information.
 - After creating the recipe, the user can choose to edit or delete the recipe. Deletion can only be processed if the user can correctly enter the contributor email that he or she has entered during recipe creation.
 - For Edit and Delete features of the recipes, by default if the recipes are by the Administrator (i.e. the Chef &amp; Grandson team), they cannot be edited or deleted.
@@ -191,7 +194,7 @@ Next, using the browser&#39;s Inspect tool and Live Server extension on VSC to p
 - Pixel 2
 - Moto G4
 - Surface Duo
-- Galaxy Fold
+- Galaxy G5/Fold
 
 These steps are repeated in the testing on major web browsers, Chrome and Firefox:
 
