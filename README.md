@@ -217,6 +217,7 @@ These steps are repeated in the testing on major web browsers, Chrome and Firefo
 | 15 | Click on Facebook, Youtube, Instagram social media icons | Will link to the respective Chef &amp; Grandson social media pages | As expected |
 
 _Youtube API button in Header Video_
+
 At times the YouTube API subscribe button in the Header video will appear positioned to the left and not directly in the middle. The correct position is in the middle of the header's video. However, by refreshing the screen, the API button will position correctly in the middle of the header video. It is unsure why the button does not appear in the middle at times and this error is corrected with refreshing the page.
 
 
