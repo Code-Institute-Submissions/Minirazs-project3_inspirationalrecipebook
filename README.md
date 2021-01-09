@@ -259,12 +259,12 @@ The site is automatically updated when new commits are pushed to the master bran
 5. Create a name file named &quot; **P** rocfile&quot; in the same directory as app.py
 6. Enter: ```web gunicorn <python file name without '.py'>```
 7. Create requirements file: ```pip3 freeze --local requirements.txt```
-8. Using bash, commit all new changes to GitHub: ```git add .``` then ```git commit -m "message"```, and then git push to Origin
+8. Using bash, commit all new changes to GitHub: ```git add .``` then ```git commit -m "message"```, and then git push to Origin ```git push```
 9. Push to Heroku: ```git push heroku master```
 
 On Heroku website:
 
-- Log into [Heroku](https://id.heroku.com/login) dashboard, go to settings and set environment variables for SECRET\_KEY = your own key, MONGO\_URI = your MongoDB URI
+- Log into [Heroku](https://id.heroku.com/login) dashboard, go to settings and set environment variables for ```SECRET\_KEY = \<your own key\>```, ```MONGO\_URI = \<your MongoDB URI\>```
 - Open App to view the web application!
 
 ## Credits
