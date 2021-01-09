@@ -213,6 +213,10 @@ These steps are repeated in the testing on major web browsers, Chrome and Firefo
 | 14 | On the delete page, to click on _Confirm Delete_ button to abort deletion | Prompt user to enter Contributor email to process deletion. Only the correct email will authorise the deletion; if incorrect email is entered, deletion will not happen. | As expected |
 | 15 | Click on Facebook, Youtube, Instagram social media icons | Will link to the respective Chef &amp; Grandson social media pages | As expected |
 
+_Youtube API button in Header Video_
+At times the YouTube API subscribe button in the Header video will appear positioned to the left and not directly in the middle. The correct position is in the middle of the header's video. However, by refreshing the screen, the API button will position correctly in the middle of the header video. It is unsure why the button does not appear in the middle at times and this error is corrected with refreshing the page.
+
+
 _Potential issues or limitations with Recipe text inputs_
 
 For the text inputs such as Description, Ingredients and Directions of each recipe, it is heavily reliant on the user to phrase, type and check the sentences accurately as the site does have an additional steps to verify and validate user inputs yet. As mentioned in the _Features that can be improved_ section, there can be an extra step by the Administrator to verify, validate and correct the sentences of each recipe before approving the recipe to be shown online.
