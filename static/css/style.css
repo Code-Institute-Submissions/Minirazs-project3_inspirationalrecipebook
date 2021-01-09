@@ -363,3 +363,15 @@ ol li::before {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+
+/* ensure small screen with less than 480px is shown properly */
+@media only screen and (max-width: 480px) {
+    body{
+        width: 100%;
+    }
+
+    .icon {
+        width: 50px !important;
+        margin: 0 1rem !important;
+    }
+}
